@@ -1,3 +1,5 @@
+# -*- mode: bash -*-
+# vi: set ft=bash :
 alias ll='ls -lG'
 alias gs='git status'
 alias gp='git push'

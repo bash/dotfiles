@@ -4,5 +4,6 @@
 [push]
 	default = current
 [core]
-	excludesfile = ~/.gitignore
-	fileMode = false
+	ignorecase = false
+	filemode = false
+	excludesfile = /Users/ruby/.gitignore

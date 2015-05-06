@@ -1,5 +1,5 @@
 # Aliases
-source .bash_aliases
+source ~/.bash_aliases
 
 # [tl;dr ~]
 export PS1="\[$(tput setaf 2)\][\[$(tput setaf 7)\]tl;dr \W\[$(tput setaf 2)\]] \[$(tput sgr0)\]"

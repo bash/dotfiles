@@ -3,6 +3,8 @@
 	email = ruby@fog.im
 [push]
 	default = current
+[merge]
+	ff = false
 [core]
 	ignorecase = false
 	filemode = false

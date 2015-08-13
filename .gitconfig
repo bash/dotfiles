@@ -1,11 +1,17 @@
 [user]
 	name = Ruby Schmidmeister
 	email = ruby@fog.im
+
 [push]
 	default = current
+
 [merge]
 	ff = false
+
 [core]
 	ignorecase = false
 	filemode = false
 	excludesfile = /Users/ruby/.gitignore
+
+[fetch]
+	recurseSubmodules = true

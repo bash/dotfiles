@@ -5,9 +5,6 @@
 [push]
 	default = current
 
-[merge]
-	ff = false
-
 [core]
 	ignorecase = false
 	filemode = false
@@ -15,3 +12,7 @@
 
 [fetch]
 	recurseSubmodules = true
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true

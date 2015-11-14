@@ -4,6 +4,11 @@ source ~/.bash_aliases
 # Hub
 eval "$(hub alias -s)"
 
+# Git Autocomplete
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
+
 merge_into() {
   # Backup current branch
   branch_name=$(git symbolic-ref -q HEAD)
@@ -26,7 +31,7 @@ push_commit() {
 
 # [tl;dr ~]
 # Custom bash prompt via kirsle.net/wizards/ps1.html
-export PS1="\[$(tput setaf 2)\][\[$(tput setaf 7)\]tl;dr \W \[$(tput setaf 6)\]\$git_branch\[$(tput setaf 2)\]] \[$(tput sgr0)\]"
+export PS1="\[$(tput setaf 2)\][\[$(tput setaf 7)\]tl;dr \W\[$(tput setaf 6)\]\[$(tput setaf 2)\]] \[$(tput sgr0)\]"
 
 PATH="~/Homebox/bin:~/Projects/Ganked/GankedUtilities/bin:${PATH}"
 export PATH

@@ -4,15 +4,16 @@ source ~/.bash_aliases
 # Hub
 eval "$(hub alias -s)"
 
-# Git Autocomplete
+# Git autocomplete
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
+# Make autocomplete (https://gist.github.com/tlrobinson/1073865)
 complete -o default -W "\`test -e Makefile && grep -oE '^[a-zA-Z0-9_-]+:([^=]|$)' Makefile | sed 's/[^a-zA-Z0-9_-]*$//'\`" make
 
 merge_into() {
-  # Backup current branch
+  # backup current branch
   branch_name=$(git symbolic-ref -q HEAD)
   branch_name=${branch_name##refs/heads/}
   branch_name=${branch_name:-HEAD}

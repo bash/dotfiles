@@ -10,6 +10,7 @@ alias unstage='git reset HEAD'
 alias showHiddenFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hideHiddenFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 alias vtop='vtop --theme wizard'
+alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 
 set-upstream() {
   local branch=$(git rev-parse --abbrev-ref HEAD)

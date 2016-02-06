@@ -11,3 +11,5 @@ alias showHiddenFiles='defaults write com.apple.finder AppleShowAllFiles YES; ki
 alias hideHiddenFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 alias vtop='vtop --theme wizard'
 alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+alias fucking='sudo'
+alias tarball='tar -cvzf'

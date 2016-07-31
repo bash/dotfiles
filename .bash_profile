@@ -2,6 +2,7 @@
 
 export MAKEFLAGS='-j8'
 export LANG=en_US.UTF-8
+export TERM=xterm-256color
 
 if [ "${IDE}" = "PHPSTORM" ]; then
   export PS1="$(tput setaf 4){$(tput sgr0) \W $(tput bold)\$$(tput sgr0) $(tput setaf 4)}$(tput sgr0) "

@@ -1,18 +1,9 @@
+[core]
+	excludesfile = /Users/ruby/.gitignore
 [user]
-	name = Ruby Schmidmeister
-	email = ruby@fog.im
-
+	name = Ruben Schmidmeister
+	email = ruben.schmidmeister@icloud.com
 [push]
 	default = current
-
-[core]
-	ignorecase = false
-	filemode = false
-	excludesfile = /Users/ruby/.gitignore
-
-[fetch]
-	recurseSubmodules = true
-[filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
+[pull]
+	default = matching

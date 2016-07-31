@@ -1,5 +1,5 @@
 [core]
-	excludesfile = /Users/ruby/.gitignore
+	excludesfile = ~/.gitignore
 [user]
 	name = Ruben Schmidmeister
 	email = ruben.schmidmeister@icloud.com

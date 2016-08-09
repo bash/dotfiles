@@ -7,3 +7,5 @@
 	default = current
 [pull]
 	default = matching
+[commit]
+	gpgsign = true

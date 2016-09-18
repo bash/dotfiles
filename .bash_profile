@@ -3,17 +3,17 @@
 export MAKEFLAGS='-j8'
 export LANG=en_US.UTF-8
 export TERM=xterm-256color
-export PATH="${PATH}:~/.bin"
+export PATH="$(brew --prefix homebrew/php/php70)/bin:${PATH}:~/.bin"
+export EDITOR='vim'
+export GPG_TTY=`tty`
 
 if [ "${IDE}" = "PHPSTORM" ]; then
-  export PS1="$(tput setaf 4){$(tput sgr0) \W $(tput bold)\$$(tput sgr0) $(tput setaf 4)}$(tput sgr0) "
+  export PS1="$(tput setaf 12){$(tput sgr0) \W $(tput bold)\$$(tput sgr0) $(tput setaf 12)}$(tput sgr0) "
 else
-  export PS1="\[$(tput setaf 4)\]{\[$(tput sgr0)\] 🌹  \W \[$(tput bold)\]\$\[$(tput sgr0)\] \[$(tput setaf 4)\]}\[$(tput sgr0)\] "
+  export PS1="\[$(tput setaf 12)\]{\[$(tput sgr0)\] 🌹  \W \[$(tput bold)\]\$\[$(tput sgr0)\] \[$(tput setaf 12)\]}\[$(tput sgr0)\] "
 fi
 
 eval "$(hub alias -s)"
-
-. /usr/local/etc/bash_completion.d/open
 
 # Git autocomplete
 if [ -f ~/.git-completion.bash ]; then

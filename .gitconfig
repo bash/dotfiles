@@ -6,6 +6,10 @@
 [push]
 	default = current
 [pull]
-	default = matching
+	default = current
 [commit]
 	gpgsign = true
+[gpg]
+	program = /usr/local/bin/gpg2
+[alias]
+    housekeep = "!git branch --merged development | grep -v development | xargs git branch -d"

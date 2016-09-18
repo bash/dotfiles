@@ -1,5 +1,6 @@
 filetype off
 set number
+set hlsearch
 
 syntax on
 colorscheme oxeded
@@ -17,3 +18,4 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set backspace=indent,eol,start
+

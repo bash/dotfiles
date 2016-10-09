@@ -12,4 +12,5 @@
 [gpg]
 	program = /usr/local/bin/gpg2
 [alias]
-    housekeep = "!git branch --merged development | grep -v development | xargs git branch -d"
+    housekeep = "!git branch --merged development | grep -v development | xargs git branch -d && git fetch --prune"
+    undo = "!git reset HEAD~1 --soft"

@@ -5,7 +5,8 @@ export PATH="/usr/local/opt/php70/bin:${PATH}:~/.bin"
 export EDITOR='vim'
 export GPG_TTY=`tty`
 export DEP_OPENSSL_INCLUDE=/usr/local/opt/openssl/include
-export PS1="[\u@\h \W]$ "
+export PS1='\W $git_branch# '
+export PROMPT_COMMAND='git_branch=`git rev-parse --git-dir > /dev/null 2>&1 && echo "($(tput setaf 2)$(git rev-parse --abbrev-ref HEAD)$(tput sgr0)) "`'
 export LIBRARY_PATH="$LIBRARY_PATH:/usr/local/lib"
 
 . ~/.bash_aliases
@@ -16,3 +17,4 @@ export LIBRARY_PATH="$LIBRARY_PATH:/usr/local/lib"
 . /usr/local/etc/bash_completion.d/coop-completion.bash 
 
 complete -o default -W "\`test -e Makefile && grep -oE '^[a-zA-Z0-9_-]+:([^=]|$)' Makefile | sed 's/[^a-zA-Z0-9_-]*$//'\`" make
+

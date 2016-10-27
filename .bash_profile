@@ -5,16 +5,25 @@ export PATH="/usr/local/opt/php70/bin:${PATH}:~/.bin"
 export EDITOR='vim'
 export GPG_TTY=`tty`
 export DEP_OPENSSL_INCLUDE=/usr/local/opt/openssl/include
-export PS1='\W $git_branch# '
-export PROMPT_COMMAND='git_branch=`git rev-parse --git-dir > /dev/null 2>&1 && echo "($(tput setaf 2)$(git rev-parse --abbrev-ref HEAD)$(tput sgr0)) "`'
+export PROMPT_COMMAND="_set_prompt; $PROMPT_COMMAND"
 export LIBRARY_PATH="$LIBRARY_PATH:/usr/local/lib"
+export PS1="\W \$_git_branch_left\[$(tput setaf 2)\]\$_git_branch\[$(tput sgr0)\]\$_git_branch_right# "
+
+_set_prompt () {
+  _git_branch=''; _git_branch_right=''; _git_branch_left=''
+
+  git rev-parse --git-dir > /dev/null 2>&1 && \
+    _git_branch_left='(' && \
+    _git_branch_right=') ' && \
+    _git_branch=$(git rev-parse --abbrev-ref HEAD)
+}
 
 . ~/.bash_aliases
 . resty
 . ~/.git-completion.bash
 . ~/.hub-completion.bash
 . ~/.cargo/env
-. /usr/local/etc/bash_completion.d/coop-completion.bash 
+. /usr/local/etc/bash_completion.d/coop-completion.bash
 
 complete -o default -W "\`test -e Makefile && grep -oE '^[a-zA-Z0-9_-]+:([^=]|$)' Makefile | sed 's/[^a-zA-Z0-9_-]*$//'\`" make
 

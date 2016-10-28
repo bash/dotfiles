@@ -15,7 +15,7 @@ _set_prompt () {
   git rev-parse --git-dir > /dev/null 2>&1 && \
     _git_branch_left='(' && \
     _git_branch_right=') ' && \
-    _git_branch=$(git rev-parse --abbrev-ref HEAD)
+    _git_branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
 }
 
 . ~/.bash_aliases

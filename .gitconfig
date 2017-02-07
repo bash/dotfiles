@@ -12,5 +12,14 @@
 [gpg]
 	program = /usr/local/bin/gpg2
 [alias]
-    housekeep = "!git branch --merged development | grep -v development | xargs git branch -d && git fetch --prune"
+    housekeep = "!git fetch --prune && git branch --merged master | grep -v master | xargs git branch -d"
     undo = "!git reset HEAD~1 --soft"
+    unstage = reset HEAD
+    track = "!git branch --set-upstream-to=origin/$(git rev-parse --abbrev-ref HEAD)"
+    nuke = clean -xd
+[status]
+	submoduleSummary = true
+[diff]
+	submodule = log
+[fetch]
+	recurseSubmodules = on-demand

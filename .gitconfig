@@ -1,0 +1,44 @@
+[core]
+	excludesfile = ~/.gitignore
+	pager = delta
+[user]
+	name = Ruben Schmidmeister
+[push]
+	default = current
+[pull]
+	default = current
+	rebase = true
+[commit]
+	gpgsign = true
+	verbose = true
+[gpg]
+	program = /usr/bin/gpg
+[alias]
+    housekeep = "!default_branch=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@') && git switch \"$default_branch\" && git pull && git fetch --prune --prune-tags && git branch --merged \"$default_branch\" | grep -v \"$default_branch\" | xargs -r -- git branch -d"
+[diff]
+	submodule = log
+    colorMoved = default
+[log]
+	decorate = full
+	follow = true
+[merge]
+	ff = false
+[rebase]
+	autoStash = true
+	autosquash = true
+[fetch]
+	prune = false
+[interactive]
+	diffFilter = delta --color-only --max-line-length 10000000
+[delta]
+    plus-color = "#012800"
+    minus-color = "#340001"
+    syntax-theme = Monokai Extended
+    line-numbers = true
+[init]
+	defaultBranch = main
+
+[includeIf "gitdir:/mnt/c/Users/Ruben/Source/GitHub/"]
+    path = "~/.gitconfig.d/github.gitconfig"
+[includeIf "gitdir:/mnt/c/Users/Ruben/Source/Messerli/"]
+    path = "~/.gitconfig.d/messerli.gitconfig"

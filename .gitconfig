@@ -16,6 +16,7 @@
 [diff]
 	submodule = log
 	colorMoved = default
+	colorMovedWS = allow-indentation-change
 [log]
 	decorate = full
 	follow = true

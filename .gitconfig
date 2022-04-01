@@ -25,7 +25,7 @@
 	conflictStyle = zdiff3
 [rebase]
 	autoStash = true
-	autosquash = true
+	autoSquash = true
 [fetch]
 	prune = false
 [interactive]

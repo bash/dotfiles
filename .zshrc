@@ -12,8 +12,15 @@ autoload -Uz compinit && compinit
 
 # Configure History
 source "$HOME/.zshrc.d/zsh-history-substring-search.zsh"
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
+
+if [[ -n "$WSLENV" ]]; then
+    bindkey '^[OA' history-substring-search-up
+    bindkey '^[OB' history-substring-search-down
+else
+    bindkey '^[[A' history-substring-search-up
+    bindkey '^[[B' history-substring-search-down
+fi
+
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='fg=127'
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='fg=55'
 

@@ -12,10 +12,10 @@
 	gpgsign = true
 	verbose = true
 [alias]
-    housekeep = "!default_branch=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@') && git switch \"$default_branch\" && git pull && git fetch --prune --prune-tags && git branch --merged \"$default_branch\" | grep -v \"$default_branch\" | xargs -r -- git branch -d"
+	housekeep = "!default_branch=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@') && git switch \"$default_branch\" && git pull && git fetch --prune --prune-tags && git branch --merged \"$default_branch\" | grep -v \"$default_branch\" | xargs -r -- git branch -d"
 [diff]
 	submodule = log
-    colorMoved = default
+	colorMoved = default
 [log]
 	decorate = full
 	follow = true
@@ -29,12 +29,12 @@
 [interactive]
 	diffFilter = delta --color-only --max-line-length 10000000
 [delta]
-    plus-color = "#012800"
-    minus-color = "#340001"
-    syntax-theme = Monokai Extended
-    line-numbers = true
+	plus-color = "#012800"
+	minus-color = "#340001"
+	syntax-theme = Monokai Extended
+	line-numbers = true
 [init]
 	defaultBranch = main
 [include]
-    path = "~/.gitconfig.d/local.gitconfig"
+	path = "~/.gitconfig.d/local.gitconfig"
 

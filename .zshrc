@@ -50,6 +50,8 @@ alias ll='exa -l --group --git'
 #hash -d Desktop=/mnt/c/Users/Ruben/Desktop
 test -f ~/.zshrc.local && source ~/.zshrc.local
 
-eval "$(keychain --eval --agents ssh --quiet)"
+if command -v keychain &> /dev/null; then
+    eval "$(keychain --eval --agents ssh --quiet)"
+fi
 
 source "$HOME/.zshrc.d/dotnet-autocomplete.zsh"

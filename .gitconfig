@@ -37,4 +37,3 @@
 	defaultBranch = main
 [include]
 	path = "~/.gitconfig.d/local.gitconfig"
-

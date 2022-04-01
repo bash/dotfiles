@@ -45,9 +45,6 @@ fi
 
 alias ll='exa -l --group --git'
 
-#hash -d Source=/mnt/c/Users/Ruben/Source
-#hash -d Downloads=/mnt/c/Users/Ruben/Downloads
-#hash -d Desktop=/mnt/c/Users/Ruben/Desktop
 test -f ~/.zshrc.local && source ~/.zshrc.local
 
 if command -v keychain &> /dev/null; then

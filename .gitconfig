@@ -22,6 +22,7 @@
 	follow = true
 [merge]
 	ff = false
+	conflictStyle = zdiff3
 [rebase]
 	autoStash = true
 	autosquash = true

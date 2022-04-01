@@ -37,5 +37,7 @@
 	line-numbers = true
 [init]
 	defaultBranch = main
+[rerere]
+	enabled = true
 [include]
 	path = "~/.gitconfig.d/local.gitconfig"

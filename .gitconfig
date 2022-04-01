@@ -11,8 +11,6 @@
 [commit]
 	gpgsign = true
 	verbose = true
-[gpg]
-	program = /usr/bin/gpg
 [alias]
     housekeep = "!default_branch=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@') && git switch \"$default_branch\" && git pull && git fetch --prune --prune-tags && git branch --merged \"$default_branch\" | grep -v \"$default_branch\" | xargs -r -- git branch -d"
 [diff]
@@ -37,8 +35,6 @@
     line-numbers = true
 [init]
 	defaultBranch = main
+[include]
+    path = "~/.gitconfig.d/local.gitconfig"
 
-[includeIf "gitdir:/mnt/c/Users/Ruben/Source/GitHub/"]
-    path = "~/.gitconfig.d/github.gitconfig"
-[includeIf "gitdir:/mnt/c/Users/Ruben/Source/Messerli/"]
-    path = "~/.gitconfig.d/messerli.gitconfig"

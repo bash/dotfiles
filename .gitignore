@@ -5,3 +5,4 @@ nupkg/
 *.swp
 *.iml
 *.sln.DotSettings.user
+.vs/

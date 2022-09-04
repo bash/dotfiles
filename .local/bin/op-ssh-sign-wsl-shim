@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+
+import sys
+from subprocess import run, PIPE
+from os.path import exists
+
+# Example invocation
+# -Y sign -n git -f /tmp/.git_signing_key_tmpXXXXXX /tmp/.git_signing_buffer_tmpXXXXXX
+
+def wslpath_windows(path):
+    return run(['wslpath', '-w', path], stdout=PIPE, check=True).stdout.decode('utf-8').rstrip('\n')
+
+def wslpath_linux(path):
+    return run(['wslpath', path], stdout=PIPE, check=True).stdout.decode('utf-8').rstrip('\n')
+
+def local_app_data_path():
+    return wslpath_linux(run(['cmd.exe', '/c', 'echo', '%LOCALAPPDATA%'], stdout=PIPE, check=True).stdout.decode('utf-8').rstrip('\r\n'))
+
+args = [wslpath_windows(arg) if exists(arg) else arg for arg in sys.argv[1:]]
+process = run([f'{local_app_data_path()}/1Password/app/8/op-ssh-sign.exe', *args])
+sys.exit(process.returncode)

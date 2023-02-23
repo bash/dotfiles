@@ -50,6 +50,14 @@ if [[ -n "$WSLENV" ]]; then
     alias subl='/mnt/c/Program\ Files/Sublime\ Text/subl.exe'
 fi
 
+if [[ -d "$HOME/.dotnet/tools" ]]; then
+    export PATH="$PATH:$HOME/.dotnet/tools"
+fi
+
+if [[ -f "$HOME/.ghcup/env" ]]; then
+    source "$HOME/.ghcup/env"
+fi
+
 alias ll='exa -l --group --git'
 
 test -f ~/.zshrc.local && source ~/.zshrc.local

@@ -42,3 +42,5 @@
 	enabled = true
 [include]
 	path = "~/.gitconfig.d/local.gitconfig"
+[gpg "ssh"]
+	allowedSignersFile = ~/.git-allowed-signers

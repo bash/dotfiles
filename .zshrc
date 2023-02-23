@@ -10,6 +10,11 @@ $ '
 
 autoload -Uz compinit && compinit
 
+# Press CTRL-v to edit command line in vi
+autoload edit-command-line
+zle -N edit-command-line
+bindkey '^v' edit-command-line
+
 # Configure History
 source "$HOME/.zshrc.d/zsh-history-substring-search.zsh"
 

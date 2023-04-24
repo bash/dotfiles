@@ -63,6 +63,11 @@ if [[ -f "$HOME/.ghcup/env" ]]; then
     source "$HOME/.ghcup/env"
 fi
 
+export CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse
+if [[ -f "$HOME/.cargo/env" ]]; then
+    source "$HOME/.cargo/env"
+fi
+
 alias ll='exa -l --group --git'
 
 test -f ~/.zshrc.local && source ~/.zshrc.local

@@ -44,3 +44,12 @@ Host *
 ## Gnome Shell Extensions
 * [Space Bar](https://github.com/christopher-l/space-bar)
 * [Dash to Dock](https://micheleg.github.io/dash-to-dock/)
+
+## Linux Apps
+* [Warp](https://apps.gnome.org/en-GB/app/app.drey.Warp/)
+* [Dynamic Wallpaper](https://flathub.org/apps/me.dusansimic.DynamicWallpaper)
+* [Loupe](https://apps.gnome.org/en-GB/app/org.gnome.Loupe/)
+* [Sticky Notes](https://flathub.org/en-GB/apps/com.vixalien.sticky)
+* [Blanket](https://flathub.org/en-GB/apps/com.rafaelmardojai.Blanket)
+* [Cartridges](https://flathub.org/en-GB/apps/hu.kramo.Cartridges)
+* [Tuba](https://flathub.org/en-GB/apps/dev.geopjr.Tuba)

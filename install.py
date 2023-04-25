@@ -19,6 +19,7 @@ linked_files = [
     '.zshrc.d',
     '.config/autostart/hidpi.desktop',
     '.config/autostart/hidpi.sh',
+    '.config/wireplumber',
 ]
 
 touch_files = [

@@ -36,6 +36,7 @@ setopt INC_APPEND_HISTORY_TIME  # append command to history file immediately aft
 setopt EXTENDED_HISTORY  # record command start time
 setopt HIST_VERIFY # show command with history expansion to user before running it
 setopt SHARE_HISTORY # share command history data
+setopt hist_ignore_space # ignore commands that start with a space
 
 HISTSIZE=50000
 SAVEHIST=10000

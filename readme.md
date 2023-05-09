@@ -40,6 +40,7 @@ Host *
 * [rustup](https://rustup.rs/)
 * [exa](https://github.com/ogham/exa)
 * [color-scheme-sync](https://github.com/bash/color-scheme-sync)
+* [mdcat](https://github.com/swsnr/mdcat)
 
 ## Gnome Shell Extensions
 * [Space Bar](https://github.com/christopher-l/space-bar)

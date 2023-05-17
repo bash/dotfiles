@@ -2,6 +2,7 @@
 
 import os
 from os import symlink, path
+import platform
 from pathlib import Path
 
 HOME = str(Path.home())
@@ -17,10 +18,14 @@ linked_files = [
     '.sqliterc',
     '.zshrc',
     '.zshrc.d',
-    '.config/autostart/hidpi.desktop',
-    '.config/autostart/hidpi.sh',
-    '.config/wireplumber',
 ]
+
+if platform.system() == 'Linux':
+    linked_files += [
+        '.config/autostart/hidpi.desktop',
+        '.config/autostart/hidpi.sh',
+        '.config/wireplumber',
+    ]
 
 touch_files = [
     '.gitconfig.d/local.gitconfig',

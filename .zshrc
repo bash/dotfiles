@@ -75,7 +75,7 @@ fi
 
 alias ll='exa -l --group --git'
 
-if ! command -v open &> /dev/null; then
+if ! command -v open &> /dev/null && command -v xdg-open &> /dev/null; then
     alias open=xdg-open
 fi
 

@@ -75,6 +75,10 @@ fi
 
 alias ll='exa -l --group --git'
 
+if ! command -v open &> /dev/null; then
+    alias open=xdg-open
+fi
+
 test -f ~/.zshrc.local && source ~/.zshrc.local
 
 if command -v keychain &> /dev/null; then

@@ -69,6 +69,10 @@ if [[ -f "$HOME/.cargo/env" ]]; then
     source "$HOME/.cargo/env"
 fi
 
+if [[ -d "$HOME/.local/share/JetBrains/Toolbox/scripts" ]]; then
+    export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts"
+fi
+
 alias ll='exa -l --group --git'
 
 test -f ~/.zshrc.local && source ~/.zshrc.local

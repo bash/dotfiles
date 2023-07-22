@@ -46,11 +46,10 @@ setopt autocd
 
 export EDITOR='vim'
 export LESS=-r
+export PATH="$PATH:$HOME/.local/bin"
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export SuppressNETCoreSdkPreviewMessage=true
-export GPG_TTY=$(tty)
 export ASPNETCORE_ENVIRONMENT=Development
-export PATH="$PATH:$HOME/.local/bin"
 
 if [[ -n "$WSLENV" ]]; then
     alias subl='/mnt/c/Program\ Files/Sublime\ Text/subl.exe'
@@ -80,9 +79,5 @@ if ! command -v open &> /dev/null && command -v xdg-open &> /dev/null; then
 fi
 
 test -f ~/.zshrc.local && source ~/.zshrc.local
-
-if command -v keychain &> /dev/null; then
-    eval "$(keychain --eval --agents ssh --quiet)"
-fi
 
 source "$HOME/.zshrc.d/dotnet-autocomplete.zsh"

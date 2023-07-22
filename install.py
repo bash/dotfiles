@@ -25,8 +25,6 @@ linked_files = [
 if platform.system() == "Linux":
     linked_files += [
         ".config/autostart/1password.desktop",
-        ".config/autostart/hidpi.desktop",
-        ".config/autostart/hidpi.sh",
         ".config/wireplumber",
     ]
 

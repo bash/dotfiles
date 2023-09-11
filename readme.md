@@ -38,7 +38,7 @@ Host *
 * [delta](https://github.com/dandavison/delta)
 * [ghcup](https://www.haskell.org/ghcup/)
 * [rustup](https://rustup.rs/)
-* [exa](https://github.com/ogham/exa)
+* [eza](https://github.com/eza-community/eza): `cargo install eza --locked`
 * [color-scheme-sync](https://github.com/bash/color-scheme-sync)
 * [mdcat](https://github.com/swsnr/mdcat)
 

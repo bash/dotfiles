@@ -72,7 +72,7 @@ if [[ -d "$HOME/.local/share/JetBrains/Toolbox/scripts" ]]; then
     export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts"
 fi
 
-alias ll='exa -l --group --git'
+alias ll='eza --long --group --git --hyperlink --binary'
 
 if ! command -v open &> /dev/null && command -v xdg-open &> /dev/null; then
     alias open=xdg-open

@@ -1,4 +1,4 @@
-.mode column
+.mode box
 .headers on
 .separator ROW "\n"
-.nullvalue NULL
+.nullvalue ∅

@@ -6,3 +6,4 @@ nupkg/
 *.iml
 *.sln.DotSettings.user
 .vs/
+.flatpak-builder/

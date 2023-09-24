@@ -26,6 +26,7 @@ if platform.system() == "Linux":
     linked_files += [
         ".config/autostart/1password.desktop",
         ".config/wireplumber",
+        ".config/user-tmpfiles.d",
     ]
 
 touch_files = [
@@ -36,6 +37,7 @@ touch_files = [
 for file in linked_files:
     src_path = path.join(path.dirname(path.realpath(__file__)), file)
     dest_path = path.join(HOME, file)
+    makedirs(path.dirname(dest_path))
     print(f"Creating symlink '{src_path}' -> '{dest_path}'")
     try:
         symlink(src_path, dest_path)

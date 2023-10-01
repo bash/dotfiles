@@ -1,3 +1,4 @@
+# vim: set syntax=sql
 .mode box
 .headers on
 .separator ROW "\n"

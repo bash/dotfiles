@@ -2,3 +2,7 @@
 .headers on
 .separator ROW "\n"
 .nullvalue ∅
+
+# [...] it (foreign key support) must still be enabled by the application at runtime, [...]
+# See: https://www.sqlite.org/foreignkeys.html#fk_enable
+PRAGMA foreign_keys = ON;

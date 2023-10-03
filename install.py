@@ -20,6 +20,8 @@ linked_files = [
     ".sqliterc",
     ".zshrc",
     ".zshrc.d",
+    ".config/git/config",
+    ".config/git/.gitignore",
 ]
 
 if platform.system() == "Linux":
@@ -30,8 +32,8 @@ if platform.system() == "Linux":
     ]
 
 touch_files = [
-    ".gitconfig.d/local.gitconfig",
-    ".gitconfig.d/github.gitconfig",
+    ".config/git/local.gitconfig",
+    ".config/git/github.gitconfig",
 ]
 
 for file in linked_files:

@@ -1,5 +1,5 @@
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.config/git/.gitignore
 	pager = delta
 [user]
 	name = Ruben Schmidmeister
@@ -41,6 +41,6 @@
 [rerere]
 	enabled = true
 [include]
-	path = "~/.gitconfig.d/local.gitconfig"
+	path = ~/.config/git/local.gitconfig
 [gpg "ssh"]
 	allowedSignersFile = ~/.git-allowed-signers

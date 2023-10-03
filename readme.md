@@ -25,9 +25,11 @@ hash -d Source=/path/to/source
 ```
 
 ### ~/.ssh/config
-```
-Host *
-	IdentityAgent ~/.1password/agent.sock
+```ssh_config
+# This ensures that the IdentityAgent is not overwritten
+# when the agent is forwarded from the client
+Match host * exec "test -z $SSH_TTY"
+IdentityAgent ~/.1password/agent.sock
 ```
 
 ## Fonts

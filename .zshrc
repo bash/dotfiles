@@ -51,6 +51,9 @@ export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export SuppressNETCoreSdkPreviewMessage=true
 export ASPNETCORE_ENVIRONMENT=Development
 
+# SQLite does not yet support loading from XDG_CONFIG_HOME in 3.40.1
+alias sqlite3="$(which sqlite3) --init ${XDG_CONFIG_HOME=$HOME/.config}/sqlite3/sqliterc"
+
 if [[ -n "$WSLENV" ]]; then
     alias subl='/mnt/c/Program\ Files/Sublime\ Text/subl.exe'
 fi

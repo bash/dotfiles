@@ -17,11 +17,11 @@ linked_files = [
     ".editorconfig",
     ".gitconfig",
     ".gitignore",
-    ".sqliterc",
     ".zshrc",
     ".zshrc.d",
     ".config/git/config",
     ".config/git/.gitignore",
+    ".config/sqlite3/sqliterc",
 ]
 
 if platform.system() == "Linux":

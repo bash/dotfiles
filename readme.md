@@ -32,6 +32,15 @@ Match host * exec "test -z $SSH_TTY"
 IdentityAgent ~/.1password/agent.sock
 ```
 
+## Authenticate with Yubikey
+(work in progress)
+
+To enable authentication with Yubikey, run:
+```shell
+sudo authselect enable-feature with-pam-u2f
+sudo authselect apply-changes
+```
+
 ## Fonts
 * [Last Resort Font](https://github.com/unicode-org/last-resort-font)
 * [JetBrains Mono](https://www.jetbrains.com/lp/mono/)

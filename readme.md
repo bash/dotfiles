@@ -52,6 +52,7 @@ sudo authselect apply-changes
 * [eza](https://github.com/eza-community/eza): `cargo install eza --locked`
 * [color-scheme-sync](https://github.com/bash/color-scheme-sync)
 * [mdcat](https://github.com/swsnr/mdcat)
+* wget2: `sudo dnf install -y wget2 && sudo dnf remove -y wget`
 
 ## Gnome Shell Extensions
 * [Space Bar](https://github.com/christopher-l/space-bar)

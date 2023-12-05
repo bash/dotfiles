@@ -81,6 +81,10 @@ if ! command -v open &> /dev/null && command -v xdg-open &> /dev/null; then
     alias open=xdg-open
 fi
 
+if command -v wget2 &> /dev/null; then
+    alias wget=wget2
+fi
+
 test -f ~/.zshrc.local && source ~/.zshrc.local
 
 source "$HOME/.zshrc.d/dotnet-autocomplete.zsh"

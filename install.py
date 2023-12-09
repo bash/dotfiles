@@ -38,13 +38,13 @@ touch_files = [
 
 for file in linked_files:
     src_path = path.join(path.dirname(path.realpath(__file__)), file)
-    dest_path = path.join(HOME, file)
-    makedirs(path.dirname(dest_path))
-    print(f"Creating symlink '{src_path}' -> '{dest_path}'")
+    link_path = path.join(HOME, file)
+    makedirs(path.dirname(link_path))
+    print(f"Creating symlink '{src_path}' -> '{link_path}'")
     try:
-        symlink(src_path, dest_path)
+        symlink(path.relpath(src_path, start=path.dirname(link_path)), link_path)
     except FileExistsError:
-        print(f"WARN: Symlink destination '{dest_path}' already exists, skipping...")
+        print(f"WARN: Symlink destination '{link_path}' already exists, skipping...")
 
 makedirs(path.join(HOME, ".gitconfig.d"))
 

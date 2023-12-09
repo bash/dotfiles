@@ -76,6 +76,7 @@ if [[ -d "$HOME/.local/share/JetBrains/Toolbox/scripts" ]]; then
 fi
 
 alias ll='eza --long --group --git --hyperlink --binary'
+alias optpdfs="mkdir -p optimized && find . -maxdepth 1 -name '*.pdf' -exec ps2pdf -dPDFSETTINGS=/ebook {} optimized/{} \;"
 
 if ! command -v open &> /dev/null && command -v xdg-open &> /dev/null; then
     alias open=xdg-open

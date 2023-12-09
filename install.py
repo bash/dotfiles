@@ -20,6 +20,7 @@ linked_files = [
     ".config/git/config",
     ".config/git/.gitignore",
     ".config/sqlite3/sqliterc",
+    ".config/Code/User/settings.json",
 ]
 
 if platform.system() == "Linux":

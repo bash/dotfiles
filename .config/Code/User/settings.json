@@ -1,0 +1,20 @@
+{
+    "[python]": {
+        "editor.formatOnSave": true
+    },
+    "[rust]": {
+        "editor.formatOnSave": true
+    },
+    "[haskell]": {
+        "editor.formatOnSave": true
+    },
+    "window.titleBarStyle": "custom",
+    "window.autoDetectColorScheme": true,
+    "editor.fontFamily": "'Jetbrains Mono', 'Droid Sans Mono', 'monospace', monospace",
+    "editor.fontLigatures": true,
+    "editor.renderWhitespace": "all",
+    "rust-analyzer.imports.granularity.group": "module",
+    "extensions.ignoreRecommendations": true,
+    "workbench.startupEditor": "none",
+    "editor.fontSize": 15
+}

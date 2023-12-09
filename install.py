@@ -15,8 +15,6 @@ def makedirs(path):
 
 linked_files = [
     ".editorconfig",
-    ".gitconfig",
-    ".gitignore",
     ".zshrc",
     ".zshrc.d",
     ".config/git/config",
@@ -45,8 +43,6 @@ for file in linked_files:
         symlink(path.relpath(src_path, start=path.dirname(link_path)), link_path)
     except FileExistsError:
         print(f"WARN: Symlink destination '{link_path}' already exists, skipping...")
-
-makedirs(path.join(HOME, ".gitconfig.d"))
 
 for file in touch_files:
     dest_path = path.join(HOME, file)

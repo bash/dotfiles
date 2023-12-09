@@ -1,6 +1,6 @@
 ## Per-device config
 
-### ~/.gitconfig.d/local.gitconfig
+### ~/.config/git/local.gitconfig
 ```gitconfig
 [user]
 	signingkey = ssh-ed25519 ...
@@ -12,7 +12,7 @@
 	path = "~/.gitconfig.d/github.gitconfig"
 ```
 
-### ~/.gitconfig.d/github.gitconfig
+### ~/.config/git/github.gitconfig
 ```gitconfig
 [user]
 	email = "..."

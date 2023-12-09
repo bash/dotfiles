@@ -2,7 +2,7 @@
 	excludesfile = ~/.config/git/.gitignore
 	pager = delta
 [user]
-	name = Ruben Schmidmeister
+	name = Tau
 [push]
 	default = current
 [pull]

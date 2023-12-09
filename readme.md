@@ -49,7 +49,7 @@ sudo authselect apply-changes
 * [delta](https://github.com/dandavison/delta)
 * [ghcup](https://www.haskell.org/ghcup/)
 * [rustup](https://rustup.rs/)
-* [eza](https://github.com/eza-community/eza): `cargo install eza --locked`
+* [eza](https://github.com/eza-community/eza): `sudo dnf install -y eza`
 * [color-scheme-sync](https://github.com/bash/color-scheme-sync)
 * [mdcat](https://github.com/swsnr/mdcat)
 * wget2: `sudo dnf install -y wget2 && sudo dnf remove -y wget`

@@ -4,6 +4,8 @@ import os
 from os import symlink, path
 import platform
 from pathlib import Path
+from glob import iglob as glob
+from subprocess import check_call
 
 HOME = str(Path.home())
 
@@ -11,7 +13,6 @@ HOME = str(Path.home())
 def makedirs(path):
     print(f"Creating directory '{path}'")
     os.makedirs(path, exist_ok=True)
-
 
 linked_files = [
     ".editorconfig",
@@ -51,3 +52,11 @@ for file in touch_files:
     print(f"Touching '{dest_path}'...")
     with open(dest_path, "a"):
         pass
+
+for f in glob('**/*.patch', root_dir='patch-usr', recursive=True, include_hidden=True):
+    file_name = f.removesuffix('.patch')
+    original = path.join('/usr', file_name)
+    patch = path.join('patch-usr', f)
+    patched = path.join(HOME, '.local', file_name)
+    makedirs(path.dirname(patched))
+    check_call(['patch', original, patch, '--output', patched])

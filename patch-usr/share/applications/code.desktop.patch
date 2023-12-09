@@ -1,0 +1,5 @@
+5c5
+< Exec=/usr/share/code/code --unity-launch %F
+---
+> Exec=/usr/share/code/code --unity-launch %F --enable-features=UseOzonePlatform --ozone-platform=wayland
+

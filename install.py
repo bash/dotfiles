@@ -21,6 +21,7 @@ linked_files = [
     ".config/git/.gitignore",
     ".config/sqlite3/sqliterc",
     ".config/Code/User/settings.json",
+    ".config/1Password/ssh/agent.toml",
 ]
 
 if platform.system() == "Linux":

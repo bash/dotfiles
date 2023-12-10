@@ -31,8 +31,9 @@ linked_files = [
 if platform.system() == "Linux":
     linked_files += [
         ".config/autostart/1password.desktop",
-        ".config/wireplumber",
+        ".config/environment.d",
         ".config/user-tmpfiles.d",
+        ".config/wireplumber",
     ]
 
 touch_files = [

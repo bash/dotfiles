@@ -1,5 +1,5 @@
 set original_command (which sqlite3)
-if not set -q $XDG_CONFIG_HOME
+if not set -q XDG_CONFIG_HOME
     set XDG_CONFIG_HOME $HOME/.config
 end
 

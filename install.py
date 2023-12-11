@@ -62,5 +62,6 @@ for f in glob('**/*.patch', root_dir='patch-usr', recursive=True, include_hidden
     original = path.join('/usr', file_name)
     patch = path.join('patch-usr', f)
     patched = path.join(HOME, '.local', file_name)
-    makedirs(path.dirname(patched))
-    check_call(['patch', original, patch, '--output', patched])
+    if path.exists(original):
+        makedirs(path.dirname(patched))
+        check_call(['patch', original, patch, '--output', patched])

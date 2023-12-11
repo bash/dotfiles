@@ -9,7 +9,7 @@
 [gpg "ssh"]
 	program = "/opt/1Password/op-ssh-sign"
 [includeIf "gitdir:~/Source/GitHub/"]
-	path = "~/.gitconfig.d/github.gitconfig"
+	path = "~/.config/git/github.gitconfig"
 ```
 
 ### ~/.config/git/github.gitconfig

@@ -8,6 +8,7 @@
     "[haskell]": {
         "editor.formatOnSave": true
     },
+    "telemetry.telemetryLevel": "off",
     "window.titleBarStyle": "custom",
     "window.commandCenter": true,
     "window.autoDetectColorScheme": true,

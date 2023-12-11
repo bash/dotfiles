@@ -24,16 +24,21 @@ linked_files = [
     ".config/git/config",
     ".config/git/.gitignore",
     ".config/sqlite3/sqliterc",
-    ".config/Code/User/settings.json",
     ".config/1Password/ssh/agent.toml",
 ]
 
 if platform.system() == "Linux":
     linked_files += [
+        ".config/Code/User/settings.json",
         ".config/autostart/1password.desktop",
         ".config/environment.d",
         ".config/user-tmpfiles.d",
         ".config/wireplumber",
+    ]
+
+if platform.system() == 'Darwin':
+    linked_files += [
+        "Library/Application Support/Code/User/settings.json",
     ]
 
 touch_files = [

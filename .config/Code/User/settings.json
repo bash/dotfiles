@@ -9,12 +9,17 @@
         "editor.formatOnSave": true
     },
     "window.titleBarStyle": "custom",
+    "window.commandCenter": true,
     "window.autoDetectColorScheme": true,
-    "editor.fontFamily": "'Jetbrains Mono', 'Droid Sans Mono', 'monospace', monospace",
+    "editor.fontFamily": "'Jetbrains Mono', monospace",
     "editor.fontLigatures": true,
     "editor.renderWhitespace": "all",
+    "rust-analyzer.procMacro.enable": true,
     "rust-analyzer.imports.granularity.group": "module",
     "extensions.ignoreRecommendations": true,
     "workbench.startupEditor": "none",
-    "editor.fontSize": 15
+    "editor.fontSize": 14,
+    "files.associations": {
+        "*.sublime-syntax": "yaml"
+    },
 }

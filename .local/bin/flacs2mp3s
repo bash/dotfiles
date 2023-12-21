@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -e
+
+while IFS= read -r -d $'\0' file; do
+    name=$(basename "$file" | cut -d '.' -f1)
+    ffmpeg -i "$file" -ab 320k -map_metadata 0 -id3v2_version 3 "$name.mp3"
+done < <(find . -name '*.flac' -print0)

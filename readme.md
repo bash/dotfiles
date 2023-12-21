@@ -37,6 +37,11 @@ IdentityAgent ~/.1password/agent.sock
 
 To enable authentication with Yubikey, run:
 ```shell
+# Writes the key to the "allowed keys" file
+mkdir -p ~/.config/Yubico
+pamu2fcfg > ~/.config/Yubico/u2f_keys
+
+sudo dnf install pam-u2f
 sudo authselect enable-feature with-pam-u2f
 sudo authselect apply-changes
 ```

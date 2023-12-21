@@ -1,7 +1,10 @@
-#!/usr/bin/env bash
-set -e
+#!/usr/bin/env python3
 
-while IFS= read -r -d $'\0' file; do
-    name=$(basename "$file" | cut -d '.' -f1)
-    ffmpeg -i "$file" -ab 320k -map_metadata 0 -id3v2_version 3 "$name.mp3"
-done < <(find . -name '*.flac' -print0)
+from subprocess import check_call
+from pathlib import Path
+from glob import glob
+
+for flac_file in glob('*.flac', recursive=True):
+    mp3_file = Path(flac_file).with_suffix('.mp3')
+    print(f'{flac_file} -> {mp3_file}')
+    check_call(['ffmpeg', '-i', flac_file, '-ab', '320k', '-map_metadata', '0', '-id3v2_version', '3', mp3_file])

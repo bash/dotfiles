@@ -14,6 +14,7 @@ def makedirs(path):
     print(f"Creating directory '{path}'")
     os.makedirs(path, exist_ok=True)
 
+
 linked_files = [
     ".editorconfig",
     ".zshrc",
@@ -38,7 +39,7 @@ if platform.system() == "Linux":
         ".config/wireplumber",
     ]
 
-if platform.system() == 'Darwin':
+if platform.system() == "Darwin":
     linked_files += [
         "Library/Application Support/Code/User/settings.json",
     ]
@@ -64,11 +65,11 @@ for file in touch_files:
     with open(dest_path, "a"):
         pass
 
-for f in glob('**/*.patch', root_dir='patch-usr', recursive=True, include_hidden=True):
-    file_name = f.removesuffix('.patch')
-    original = path.join('/usr', file_name)
-    patch = path.join('patch-usr', f)
-    patched = path.join(HOME, '.local', file_name)
+for f in glob("**/*.patch", root_dir="patch-usr", recursive=True, include_hidden=True):
+    file_name = f.removesuffix(".patch")
+    original = path.join("/usr", file_name)
+    patch = path.join("patch-usr", f)
+    patched = path.join(HOME, ".local", file_name)
     if path.exists(original):
         makedirs(path.dirname(patched))
-        check_call(['patch', original, patch, '--output', patched])
+        check_call(["patch", original, patch, "--output", patched])

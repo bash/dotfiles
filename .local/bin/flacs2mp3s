@@ -4,7 +4,20 @@ from subprocess import check_call
 from pathlib import Path
 from glob import glob
 
-for flac_file in glob('*.flac', recursive=True):
-    mp3_file = Path(flac_file).with_suffix('.mp3')
-    print(f'{flac_file} -> {mp3_file}')
-    check_call(['ffmpeg', '-i', flac_file, '-ab', '320k', '-map_metadata', '0', '-id3v2_version', '3', mp3_file])
+for flac_file in glob("*.flac", recursive=True):
+    mp3_file = Path(flac_file).with_suffix(".mp3")
+    print(f"{flac_file} -> {mp3_file}")
+    check_call(
+        [
+            "ffmpeg",
+            "-i",
+            flac_file,
+            "-ab",
+            "320k",
+            "-map_metadata",
+            "0",
+            "-id3v2_version",
+            "3",
+            mp3_file,
+        ]
+    )

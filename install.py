@@ -20,8 +20,6 @@ def makedirs(path):
 
 linked_files = [
     ".editorconfig",
-    ".zshrc",
-    ".zshrc.d",
     ".config/fish/conf.d",
     ".config/fish/config.fish",
     ".config/fish/functions",

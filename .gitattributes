@@ -1,1 +1,2 @@
 sqliterc linguist-language=SQL
+.Brewfile linguist-language=Ruby

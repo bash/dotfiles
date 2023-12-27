@@ -22,7 +22,7 @@ brew "node"
 brew "optipng"
 brew "pandoc"
 brew "pipx"
-brew "python@3.12"
+brew "python@3.12", link: true
 brew "trash"
 brew "typst"
 brew "wget2"

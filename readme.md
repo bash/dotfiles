@@ -75,9 +75,9 @@ sudo authselect apply-changes
 ## Homebrew
 To install dependencies from Homebrew run:
 ```shell
-brew bundle install
+brew bundle install --global
 ```
 and to remove unused formula run:
 ```shell
-brew bundle --force cleanup
+brew bundle --force cleanup --global
 ```

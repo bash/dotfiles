@@ -42,6 +42,7 @@ if platform.system() == "Linux":
 if platform.system() == "Darwin":
     linked_files += [
         "Library/Application Support/Code/User/settings.json",
+        ".Brewfile",
     ]
 
 touch_files = [

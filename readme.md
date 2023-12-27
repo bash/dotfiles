@@ -71,3 +71,13 @@ sudo authselect apply-changes
 * [Blanket](https://flathub.org/en-GB/apps/com.rafaelmardojai.Blanket)
 * [Cartridges](https://flathub.org/en-GB/apps/hu.kramo.Cartridges)
 * [Tuba](https://flathub.org/en-GB/apps/dev.geopjr.Tuba)
+
+## Homebrew
+To install dependencies from Homebrew run:
+```shell
+brew bundle install
+```
+and to remove unused formula run:
+```shell
+brew bundle --force cleanup
+```

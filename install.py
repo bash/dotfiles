@@ -50,6 +50,11 @@ touch_files = [
     ".config/git/github.gitconfig",
 ]
 
+vscode_extensions = [
+    "editorconfig.editorconfig",
+    "ms-python.black-formatter",
+]
+
 for file in linked_files:
     src_path = path.join(path.dirname(path.realpath(__file__)), file)
     link_path = path.join(HOME, file)
@@ -74,3 +79,6 @@ for f in glob("**/*.patch", root_dir="patch-usr", recursive=True, include_hidden
     if path.exists(original):
         makedirs(path.dirname(patched))
         check_call(["patch", original, patch, "--output", patched])
+
+for extension in vscode_extensions:
+    check_call(["code", "--install-extension", extension])

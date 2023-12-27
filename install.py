@@ -53,10 +53,8 @@ touch_files = [
     ".config/git/github.gitconfig",
 ]
 
-vscode_extensions = [
-    "editorconfig.editorconfig",
-    "ms-python.black-formatter",
-]
+with open("vscode.toml", "rb") as f:
+    vscode_extensions = tomllib.load(f)["extensions"]
 
 for file in linked_files:
     src_path = path.join(path.dirname(path.realpath(__file__)), file)
@@ -85,5 +83,8 @@ for f in glob("**/*.patch", root_dir="patch-usr", recursive=True, include_hidden
         makedirs(path.dirname(patched))
         check_call(["patch", original, patch, "--output", patched])
 
-for extension in vscode_extensions:
+installed_vscode_extensions = (
+    check_output(["code", "--list-extensions"]).decode("utf-8").splitlines()
+)
+for extension in set(vscode_extensions) - set(installed_vscode_extensions):
     check_call(["code", "--install-extension", extension])

@@ -3,6 +3,7 @@
 	pager = git delta
 [user]
 	name = Tau
+	email = git@tau.garden
 [push]
 	default = current
 [pull]

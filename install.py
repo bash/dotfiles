@@ -38,6 +38,7 @@ if platform.system() == "Linux":
         ".config/environment.d",
         ".config/user-tmpfiles.d",
         ".config/wireplumber",
+        ".local/bin/code",
     ]
 
 if platform.system() == "Darwin":

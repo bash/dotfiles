@@ -1,6 +1,6 @@
 [core]
 	excludesfile = ~/.config/git/.gitignore
-	pager = delta
+	pager = git delta
 [user]
 	name = Tau
 [push]
@@ -14,6 +14,7 @@
 [alias]
 	housekeep = "!default_branch=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@') && git switch \"$default_branch\" && git pull && git fetch --prune --prune-tags && git branch --merged \"$default_branch\" | grep -v \"$default_branch\" | xargs -r -- git branch -d"
 	prlog = "log --oneline --merges --first-parent origin/main"
+	delta = !delta $(test-color-scheme --light --dark)
 [diff]
 	submodule = log
 	colorMoved = default
@@ -30,11 +31,10 @@
 [fetch]
 	prune = false
 [interactive]
-	diffFilter = delta --color-only --max-line-length 10000000
+	diffFilter = git delta --color-only --max-line-length 10000000
 [delta]
 	plus-color = "#012800"
 	minus-color = "#340001"
-	syntax-theme = Monokai Extended
 	line-numbers = true
 [init]
 	defaultBranch = main

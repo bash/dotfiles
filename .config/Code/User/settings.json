@@ -15,12 +15,16 @@
     "editor.fontFamily": "'Jetbrains Mono', monospace",
     "editor.fontLigatures": true,
     "editor.renderWhitespace": "all",
+    "editor.accessibilitySupport": "off",
     "rust-analyzer.procMacro.enable": true,
     "rust-analyzer.imports.granularity.group": "module",
     "extensions.ignoreRecommendations": true,
     "workbench.startupEditor": "none",
     "editor.fontSize": 14,
     "files.associations": {
-        "*.sublime-syntax": "yaml"
+        "*.sublime-syntax": "yaml",
+        "*.1": "troff",
+        "*.5": "troff",
+        "*.8": "troff"
     },
 }

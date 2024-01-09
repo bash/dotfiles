@@ -4,4 +4,5 @@ extensions = [
     "ms-python.black-formatter",
     "tamasfe.even-better-toml",
     "rust-lang.rust-analyzer",
+    "nvarner.typst-lsp",
 ]

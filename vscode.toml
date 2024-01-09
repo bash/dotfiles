@@ -5,4 +5,5 @@ extensions = [
     "tamasfe.even-better-toml",
     "rust-lang.rust-analyzer",
     "nvarner.typst-lsp",
+    "tomoki1207.pdf",
 ]

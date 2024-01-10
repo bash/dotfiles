@@ -1,3 +1,5 @@
+# vim: set syntax=ruby:
+
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "mczachurski/wallpapper"

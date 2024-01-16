@@ -15,7 +15,7 @@
 [alias]
 	housekeep = "!default_branch=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@') && git switch \"$default_branch\" && git pull && git fetch --prune --prune-tags && git branch --merged \"$default_branch\" | grep -v \"$default_branch\" | xargs -r -- git branch -d"
 	prlog = "log --oneline --merges --first-parent origin/main"
-	delta = !delta $(test-color-scheme --light --dark)
+	delta = !delta --$(termtheme || echo dark)
 [diff]
 	submodule = log
 	colorMoved = default

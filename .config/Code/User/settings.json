@@ -22,10 +22,11 @@
     "workbench.startupEditor": "none",
     "editor.fontSize": 14,
     "files.associations": {
+        "*.html.tera": "html",
         "*.sublime-syntax": "yaml",
         "*.1": "troff",
         "*.5": "troff",
         "*.8": "troff"
     },
-    "typst-lsp.exportPdf": "never",
+    "typst-lsp.exportPdf": "never"
 }

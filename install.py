@@ -28,7 +28,6 @@ linked_files = [
     ".config/sqlite3/sqliterc",
     ".config/1Password/ssh/agent.toml",
     ".local/bin/flacs2mp3s",
-    ".local/bin/test-color-scheme",
 ]
 
 if platform.system() == "Linux":

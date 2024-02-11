@@ -49,6 +49,7 @@ sudo authselect apply-changes
 ## Fonts
 * [Last Resort Font](https://github.com/unicode-org/last-resort-font)
 * [JetBrains Mono](https://www.jetbrains.com/lp/mono/)
+* [Microsoft Core Fonts](https://mscorefonts2.sourceforge.net/)
 
 ## Tools
 * [delta](https://github.com/dandavison/delta)

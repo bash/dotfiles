@@ -17,7 +17,7 @@
 	housekeep = "!default_branch=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@') && git switch \"$default_branch\" && git pull && git fetch --prune --prune-tags && git branch --merged \"$default_branch\" | grep -v \"$default_branch\" | xargs -r -- git branch -d"
 	prlog = "log --oneline --merges --first-parent origin/main"
 [diff]
-	submodule = log
+	algorithm = histogram
 	colorMoved = default
 	colorMovedWS = allow-indentation-change
 [log]
@@ -29,8 +29,10 @@
 [rebase]
 	autoStash = true
 	autoSquash = true
+	missingCommitsCheck = error
 [fetch]
-	prune = false
+	prune = true
+	prunetags = true
 [interactive]
 	diffFilter = delta --color-only --max-line-length 10000000
 [delta]

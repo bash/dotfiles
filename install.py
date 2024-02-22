@@ -33,6 +33,7 @@ linked_files = [
 
 if platform.system() == "Linux":
     linked_files += [
+        ".config/color-scheme-sync.d",
         ".config/Code/User/settings.json",
         ".config/sublime-merge/Packages/User/Preferences.sublime-settings",
         ".config/autostart/1password.desktop",

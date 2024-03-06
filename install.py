@@ -6,6 +6,7 @@ import platform
 from pathlib import Path
 from glob import iglob as glob
 from subprocess import check_call, check_output
+from tempfile import NamedTemporaryFile
 import tomllib
 
 HOME = str(Path.home())
@@ -78,11 +79,19 @@ for file in touch_files:
 for f in glob("**/*.patch", root_dir="patch-usr", recursive=True, include_hidden=True):
     file_name = f.removesuffix(".patch")
     original = path.join("/usr", file_name)
+    if not path.exists(original):
+        original = path.join("/var/lib/flatpak/exports", file_name)
     patch = path.join("patch-usr", f)
     patched = path.join(HOME, ".local", file_name)
     if path.exists(original):
-        makedirs(path.dirname(patched))
-        check_call(["patch", original, patch, "--output", patched])
+        print(f"Patching {original} -> {patched}")
+        # patch is not happy when trying to read from symlinks, so we copy the source file first
+        with NamedTemporaryFile(suffix=".patch") as original_tmp:
+            with open(original, "rb") as f:
+                original_tmp.write(f.read())
+                original_tmp.flush()
+            makedirs(path.dirname(patched))
+            check_call(["patch", original_tmp.name, patch, "--output", patched])
 
 installed_vscode_extensions = (
     check_output(["code", "--list-extensions"]).decode("utf-8").splitlines()

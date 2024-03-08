@@ -1,5 +1,6 @@
 set -g fish_greeting
 
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+    # Set cursor style
+    printf '\e[3 q'
 end

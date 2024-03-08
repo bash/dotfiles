@@ -6,4 +6,5 @@ extensions = [
     "rust-lang.rust-analyzer",
     "nvarner.typst-lsp",
     "tomoki1207.pdf",
+    "alefragnani.bookmarks",
 ]

@@ -7,4 +7,6 @@ extensions = [
     "nvarner.typst-lsp",
     "tomoki1207.pdf",
     "alefragnani.bookmarks",
+    "bmalehorn.vscode-fish",
+    "timonwong.shellcheck",
 ]

@@ -98,3 +98,8 @@ installed_vscode_extensions = (
 )
 for extension in set(vscode_extensions) - set(installed_vscode_extensions):
     check_call(["code", "--install-extension", extension])
+
+extra_vscode_extensions = set(installed_vscode_extensions) - set(vscode_extensions)
+if len(extra_vscode_extensions) >= 1:
+    print(f"{YELLOW}Warning{RESET}: extra VSCode extensions found")
+    print("\n".join([f"• {ext}" for ext in extra_vscode_extensions]))

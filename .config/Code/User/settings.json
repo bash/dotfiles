@@ -26,7 +26,11 @@
         "*.sublime-syntax": "yaml",
         "*.1": "troff",
         "*.5": "troff",
-        "*.8": "troff"
+        "*.8": "troff",
+        "*.bash.in": "shellscript",
+        "*.fish.in": "fish",
+        "*.zsh.in": "shellscript",
+        "*.ps1.in": "powershell",
     },
     "typst-lsp.exportPdf": "never"
 }

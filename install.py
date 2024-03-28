@@ -21,6 +21,7 @@ def makedirs(path):
 
 linked_files = [
     ".editorconfig",
+    ".config/alacritty",
     ".config/fish/conf.d",
     ".config/fish/config.fish",
     ".config/fish/functions",

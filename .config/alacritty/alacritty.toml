@@ -1,0 +1,5 @@
+import = [
+    "~/.local/state/alacritty/theme.toml"
+]
+
+# shell = "tmux"

@@ -19,6 +19,10 @@ def makedirs(path):
     os.makedirs(path, exist_ok=True)
 
 
+def pretty_path(path: str) -> str:
+    return path.replace(HOME, "~", 1) if path.startswith(HOME) else path
+
+
 linked_files = [
     ".editorconfig",
     ".config/alacritty",
@@ -65,7 +69,9 @@ for file in linked_files:
     link_path = path.join(HOME, file)
     makedirs(path.dirname(link_path))
     try:
-        print(f"Symlink '{src_path}' -> '{link_path}'", end="")
+        print(
+            f"Symlink '{pretty_path(src_path)}' -> '{pretty_path(link_path)}'", end=""
+        )
         symlink(path.relpath(src_path, start=path.dirname(link_path)), link_path)
         print(f" [{GREEN}ok{RESET}]")
     except FileExistsError:
@@ -86,7 +92,7 @@ for f in glob("**/*.patch", root_dir="patch-usr", recursive=True, include_hidden
     patch = path.join("patch-usr", f)
     patched = path.join(HOME, ".local", file_name)
     if path.exists(original):
-        print(f"Patching {original} -> {patched}")
+        print(f"Patching {pretty_path(original)} -> {pretty_path(patched)}")
         # patch is not happy when trying to read from symlinks, so we copy the source file first
         with NamedTemporaryFile(suffix=".patch") as original_tmp:
             with open(original, "rb") as f:

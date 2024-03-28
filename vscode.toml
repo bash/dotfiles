@@ -9,4 +9,5 @@ extensions = [
     "alefragnani.bookmarks",
     "bmalehorn.vscode-fish",
     "timonwong.shellcheck",
+    "github.copilot",
 ]

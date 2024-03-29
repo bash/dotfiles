@@ -32,5 +32,6 @@
         "*.zsh.in": "shellscript",
         "*.ps1.in": "powershell",
     },
-    "typst-lsp.exportPdf": "never"
+    "typst-lsp.exportPdf": "never",
+    "update.showReleaseNote": false
 }

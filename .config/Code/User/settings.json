@@ -33,5 +33,6 @@
         "*.ps1.in": "powershell",
     },
     "typst-lsp.exportPdf": "never",
-    "update.showReleaseNote": false
+    "git.enableStatusBarSync": false,
+    "update.showReleaseNotes": false
 }

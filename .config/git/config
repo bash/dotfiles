@@ -2,7 +2,7 @@
 	excludesfile = ~/.config/git/.gitignore
 	pager = delta
 [user]
-	name = Tau
+	name = Tau Gärtli
 	email = git@tau.garden
 [push]
 	default = current

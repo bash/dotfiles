@@ -10,4 +10,5 @@ extensions = [
     "bmalehorn.vscode-fish",
     "timonwong.shellcheck",
     "github.copilot",
+    "github.vscode-github-actions",
 ]

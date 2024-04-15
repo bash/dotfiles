@@ -41,6 +41,7 @@ linked_files = [
 
 if platform.system() == "Linux":
     linked_files += [
+        ".config/kitty",
         ".config/color-scheme-sync.d",
         ".config/Code/User/settings.json",
         ".config/sublime-merge/Packages/User/Preferences.sublime-settings",

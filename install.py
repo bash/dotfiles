@@ -26,6 +26,7 @@ def pretty_path(path: str) -> str:
 linked_files = [
     ".editorconfig",
     ".config/alacritty",
+    ".config/nvim",
     ".config/tmux",
     ".config/fish/conf.d",
     ".config/fish/config.fish",

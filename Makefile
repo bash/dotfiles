@@ -1,3 +1,3 @@
 .PHONY: install
 install:
-	./install.py
+	./install

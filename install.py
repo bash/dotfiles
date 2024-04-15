@@ -8,11 +8,9 @@ from glob import iglob as glob
 from subprocess import check_call, check_output
 from tempfile import NamedTemporaryFile
 import tomllib
+from termcolor import colored
 
 HOME = str(Path.home())
-GREEN = "\033[32m"
-YELLOW = "\033[33m"
-RESET = "\033[0m"
 
 
 def makedirs(path):
@@ -74,9 +72,9 @@ for file in linked_files:
             f"Symlink '{pretty_path(src_path)}' -> '{pretty_path(link_path)}'", end=""
         )
         symlink(path.relpath(src_path, start=path.dirname(link_path)), link_path)
-        print(f" [{GREEN}ok{RESET}]")
+        print(f" [{colored('ok', color='green')}]")
     except FileExistsError:
-        print(f" [{YELLOW}skipped{RESET}]")
+        print(f" [{colored('skipped', color='yellow')}]")
 
 for file in touch_files:
     dest_path = path.join(HOME, file)
@@ -110,5 +108,5 @@ for extension in set(vscode_extensions) - set(installed_vscode_extensions):
 
 extra_vscode_extensions = set(installed_vscode_extensions) - set(vscode_extensions)
 if len(extra_vscode_extensions) >= 1:
-    print(f"{YELLOW}Warning{RESET}: extra VSCode extensions found")
+    print(f"{colored('Warning', color='yellow')}: extra VSCode extensions found")
     print("\n".join([f"• {ext}" for ext in extra_vscode_extensions]))

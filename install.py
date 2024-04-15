@@ -46,7 +46,6 @@ if platform.system() == "Linux":
         ".config/Code/User/settings.json",
         ".config/sublime-merge/Packages/User/Preferences.sublime-settings",
         ".config/autostart/1password.desktop",
-        ".config/environment.d",
         ".config/user-tmpfiles.d",
         ".config/wireplumber",
         ".local/bin/code",

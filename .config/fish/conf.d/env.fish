@@ -1,2 +1,2 @@
 fish_add_path --prepend --path "$HOME/.local/bin"
-set --export EDITOR vim
+set --export EDITOR nvim

@@ -34,5 +34,7 @@
     },
     "typst-lsp.exportPdf": "never",
     "git.enableStatusBarSync": false,
-    "update.showReleaseNotes": false
+    "update.showReleaseNotes": false,
+    "terminal.integrated.enableImages": true,
+    "terminal.integrated.enableVisualBell": true,
 }

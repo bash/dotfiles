@@ -22,28 +22,29 @@ def pretty_path(path: str) -> str:
 
 
 linked_files = [
-    ".editorconfig",
+    ".config/1Password/ssh/agent.toml",
     ".config/alacritty",
-    ".config/nvim",
-    ".config/tmux",
     ".config/fish/conf.d",
     ".config/fish/config.fish",
     ".config/fish/functions",
-    ".config/git/config",
     ".config/git/.gitignore",
+    ".config/git/config",
+    ".config/nvim",
     ".config/sqlite3/sqliterc",
-    ".config/1Password/ssh/agent.toml",
+    ".config/tmux",
+    ".config/wezterm",
+    ".editorconfig",
     ".local/bin/flacs2mp3s",
     ".vimrc",
 ]
 
 if platform.system() == "Linux":
     linked_files += [
-        ".config/kitty",
-        ".config/color-scheme-sync.d",
         ".config/Code/User/settings.json",
-        ".config/sublime-merge/Packages/User/Preferences.sublime-settings",
         ".config/autostart/1password.desktop",
+        ".config/color-scheme-sync.d",
+        ".config/kitty",
+        ".config/sublime-merge/Packages/User/Preferences.sublime-settings",
         ".config/user-tmpfiles.d",
         ".config/wireplumber",
         ".local/bin/code",
@@ -51,13 +52,13 @@ if platform.system() == "Linux":
 
 if platform.system() == "Darwin":
     linked_files += [
-        "Library/Application Support/Code/User/settings.json",
         ".Brewfile",
+        "Library/Application Support/Code/User/settings.json",
     ]
 
 touch_files = [
-    ".config/git/local.gitconfig",
     ".config/git/github.gitconfig",
+    ".config/git/local.gitconfig",
 ]
 
 with open("vscode.toml", "rb") as f:

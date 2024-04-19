@@ -1,4 +1,4 @@
-vim.opt.mouse = "a" -- use mouse in all modes
+vim.opt.mouse = ""
 
 -- Bootstrap lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"

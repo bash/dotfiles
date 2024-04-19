@@ -48,6 +48,7 @@ if platform.system() == "Linux":
         ".config/user-tmpfiles.d",
         ".config/wireplumber",
         ".local/bin/code",
+        ".local/bin/reset-desktop-used-apps",
     ]
 
 if platform.system() == "Darwin":

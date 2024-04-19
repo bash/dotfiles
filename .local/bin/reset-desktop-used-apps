@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# Resets the 'desktop-used-apps' table.
+# This table is used by the OpenURI portal to determine which
+# app to open for a given mime type.
+
+table=desktop-used-apps
+service=org.freedesktop.impl.portal.PermissionStore
+object=/org/freedesktop/impl/portal/PermissionStore
+interface=org.freedesktop.impl.portal.PermissionStore
+
+busctl -j --user call "$service" "$object" "$interface" List s "$table" \
+    | jq --raw-output0  '.data[][]' \
+    | xargs -0 -L1 -r busctl --user call "$service" "$object" "$interface" Delete ss "$table"

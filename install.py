@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import os
-from os import symlink, path
+from os import symlink, path, environ
 import platform
 from pathlib import Path
 from glob import iglob as glob
@@ -112,3 +112,33 @@ extra_vscode_extensions = set(installed_vscode_extensions) - set(vscode_extensio
 if len(extra_vscode_extensions) >= 1:
     print(f"{colored('Warning', color='yellow')}: extra VSCode extensions found")
     print("\n".join([f"• {ext}" for ext in extra_vscode_extensions]))
+
+if "XDG_CURRENT_DESKTOP" in environ and environ["XDG_CURRENT_DESKTOP"] == "GNOME":
+    with open("gnome.toml", "rb") as f:
+        shell_extensions = tomllib.load(f)["extensions"]
+
+    installed_shell_extensions = (
+        check_output(["gnome-extensions", "list"]).decode("utf-8").splitlines()
+    )
+    for extension in set(shell_extensions) - set(installed_shell_extensions):
+        check_call(
+            [
+                "busctl",
+                "--user",
+                "call",
+                "org.gnome.Shell.Extensions",
+                "/org/gnome/Shell/Extensions",
+                "org.gnome.Shell.Extensions",
+                "InstallRemoteExtension",
+                "s",
+                extension,
+            ]
+        )
+    for extension in shell_extensions:
+        check_call(
+            [
+                "gnome-extensions",
+                "enable",
+                extension,
+            ]
+        )

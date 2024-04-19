@@ -3,6 +3,8 @@
 # Resets the 'desktop-used-apps' table.
 # This table is used by the OpenURI portal to determine which
 # app to open for a given mime type.
+#
+# See: https://github.com/flatpak/xdg-desktop-portal/wiki/The-Permission-Store
 
 table=desktop-used-apps
 service=org.freedesktop.impl.portal.PermissionStore

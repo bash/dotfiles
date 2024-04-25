@@ -1,4 +1,0 @@
-extensions = [
-    "burn-my-windows@schneegans.github.com",
-    "light-style@gnome-shell-extensions.gcampax.github.com",
-]

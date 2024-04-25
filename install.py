@@ -26,7 +26,8 @@ def install():
             case "vscode-extensions":
                 install_vscode_extensions([n.name for n in node.nodes])
             case "gnome-shell-extensions":
-                install_gnome_shell_extensions([n.name for n in node.nodes])
+                if is_gnome():
+                    install_gnome_shell_extensions([n.name for n in node.nodes])
             case "pipx":
                 install_pipx_packages([(n.name, n.args[0]) for n in node.nodes])
             case _:

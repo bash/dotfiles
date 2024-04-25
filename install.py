@@ -12,8 +12,11 @@ import kdl
 
 
 def install():
+    update_submodules()
+
     with open(path.join(path.dirname(__file__), "config.kdl")) as f:
         config = kdl.parse(f.read())
+
     for node in config.nodes:
         match node.name:
             case "symlink":
@@ -29,11 +32,12 @@ def install():
             case _:
                 print(colored(f"Unknown node type: {node.name}", color="red"))
                 exit(1)
+
     patch_usr()
 
 
-def file_list_from_node(symlink_node: kdl.Node) -> list[str]:
-    return [node.name for node in nodes_for_current_os(symlink_node.nodes)]
+def update_submodules():
+    check_call(["git", "submodule", "update", "--init", "--recursive"])
 
 
 def symlink_files(files: list[str]) -> None:
@@ -138,6 +142,10 @@ def is_gnome():
     return (
         "XDG_CURRENT_DESKTOP" in environ and environ["XDG_CURRENT_DESKTOP"] == "GNOME"
     )
+
+
+def file_list_from_node(symlink_node: kdl.Node) -> list[str]:
+    return [node.name for node in nodes_for_current_os(symlink_node.nodes)]
 
 
 def nodes_for_current_os(nodes: list[kdl.Node]) -> list[kdl.Node]:

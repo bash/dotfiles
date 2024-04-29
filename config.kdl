@@ -4,6 +4,7 @@ symlink {
     ".config/autostart/1password.desktop" os="Linux"
     ".config/homebrew" os="Darwin"
     ".config/Code/User/settings.json" os="Linux"
+    ".config/Code/User/keybindings.json" os="Linux"
     ".config/color-scheme-sync.d" os="Linux"
     ".config/fish/conf.d"
     ".config/fish/config.fish"
@@ -24,6 +25,7 @@ symlink {
     ".local/bin/reset-desktop-used-apps" os="Linux"
     ".vimrc"
     "Library/Application Support/Code/User/settings.json" os="Darwin"
+    "Library/Application Support/Code/User/keybindings.json" os="Darwin"
 }
 
 touch {

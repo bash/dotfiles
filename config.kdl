@@ -1,8 +1,8 @@
 symlink {
-    ".Brewfile" os="Darwin"
     ".config/1Password/ssh/agent.toml"
     ".config/alacritty"
     ".config/autostart/1password.desktop" os="Linux"
+    ".config/homebrew" os="Darwin"
     ".config/Code/User/settings.json" os="Linux"
     ".config/color-scheme-sync.d" os="Linux"
     ".config/fish/conf.d"

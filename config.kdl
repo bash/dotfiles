@@ -15,6 +15,7 @@ symlink {
     ".config/nvim"
     ".config/sqlite3/sqliterc"
     ".config/sublime-merge/Packages/User/Preferences.sublime-settings" os="Linux"
+    ".config/sublime-text/Packages/User/Preferences.sublime-settings" os="Linux"
     ".config/tmux"
     ".config/user-tmpfiles.d" os="Linux"
     ".config/wezterm"
@@ -26,6 +27,8 @@ symlink {
     ".vimrc"
     "Library/Application Support/Code/User/settings.json" os="Darwin"
     "Library/Application Support/Code/User/keybindings.json" os="Darwin"
+    "Library/Application Support/Sublime Merge/Packages/User/Preferences.sublime-settings" os="Darwin"
+    "Library/Application Support/Sublime Text/Packages/User/Preferences.sublime-settings" os="Darwin"
 }
 
 touch {

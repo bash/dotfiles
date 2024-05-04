@@ -7,6 +7,7 @@ tap "sass/sass"
 
 # brew "bat" # disabled until the dark-light mode pr is merged and released
 brew "brotli"
+brew "cmake"
 brew "csvlens"
 brew "curl"
 brew "dbus"
@@ -23,6 +24,7 @@ brew "jpegoptim"
 brew "jq"
 brew "less"
 brew "lesspipe"
+brew "libzen" # needed for egui apps
 brew "make"
 brew "mczachurski/wallpapper/wallpapper"
 brew "mdcat"

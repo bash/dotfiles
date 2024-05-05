@@ -41,6 +41,7 @@ brew "python@3.12", link: true
 brew "ripgrep"
 brew "sass/sass/sass"
 brew "trash"
+brew "trunk"
 brew "typst"
 brew "wget2"
 brew "woff2"

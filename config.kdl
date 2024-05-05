@@ -32,7 +32,6 @@ symlink {
 }
 
 touch {
-    ".config/git/github.gitconfig"
     ".config/git/local.gitconfig"
 }
 

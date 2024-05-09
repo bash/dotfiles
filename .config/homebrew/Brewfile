@@ -46,3 +46,5 @@ brew "typst"
 brew "wget2"
 brew "woff2"
 brew "zola"
+
+cask "eloston-chromium"

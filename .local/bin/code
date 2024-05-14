@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 extra_args=""
-test -n "$WAYLAND_DISPLAY" && extra_args="--enable-features=UseOzonePlatform --ozone-platform=wayland"
+test -n "$WAYLAND_DISPLAY" && extra_args=(--enable-features=UseOzonePlatform --ozone-platform=wayland)
 
-$(which --skip-tilde code) $@ $extra_args
+$(which --skip-tilde code) "$@" "${extra_args[@]}"

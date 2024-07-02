@@ -50,7 +50,6 @@ vscode-extensions {
     alefragnani.bookmarks
     bmalehorn.vscode-fish
     timonwong.shellcheck
-    github.copilot
     github.vscode-github-actions
     kdl-org.kdl
 }

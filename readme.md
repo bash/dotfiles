@@ -63,10 +63,6 @@ sudo authselect apply-changes
 * [mdcat](https://github.com/swsnr/mdcat)
 * wget2: `sudo dnf install -y wget2 && sudo dnf remove -y wget`
 
-## Gnome Shell Extensions
-* [Space Bar](https://github.com/christopher-l/space-bar)
-* [Dash to Dock](https://micheleg.github.io/dash-to-dock/)
-
 ## Linux Apps
 * [Warp](https://apps.gnome.org/en-GB/app/app.drey.Warp/)
 * [Dynamic Wallpaper](https://flathub.org/apps/me.dusansimic.DynamicWallpaper)

@@ -20,6 +20,7 @@ symlink {
     ".config/user-tmpfiles.d" os="Linux"
     ".config/wezterm"
     ".config/wireplumber" os="Linux"
+    ".config/zed/settings.json"
     ".editorconfig"
     ".local/bin/code" os="Linux"
     ".local/bin/flacs2mp3s"

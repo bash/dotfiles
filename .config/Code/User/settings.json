@@ -12,7 +12,7 @@
     "window.titleBarStyle": "custom",
     "window.commandCenter": true,
     "window.autoDetectColorScheme": true,
-    "editor.fontFamily": "'Jetbrains Mono', monospace",
+    "editor.fontFamily": "'Fira Code', monospace",
     "editor.fontLigatures": true,
     "editor.renderWhitespace": "all",
     "editor.accessibilitySupport": "off",
@@ -30,7 +30,7 @@
         "*.bash.in": "shellscript",
         "*.fish.in": "fish",
         "*.zsh.in": "shellscript",
-        "*.ps1.in": "powershell",
+        "*.ps1.in": "powershell"
     },
     "typst-lsp.exportPdf": "never",
     "git.enableStatusBarSync": false,

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import os
-from os import symlink, path, environ
+from os import symlink, path, environ, unlink
 import platform
 from pathlib import Path
 from glob import iglob as glob
@@ -51,8 +51,14 @@ def symlink_files(files: list[str]) -> None:
                 f"Symlink '{pretty_path(src_path)}' -> '{pretty_path(link_path)}'",
                 end="",
             )
+            update = path.islink(link_path)
+            if update:
+                unlink(link_path)
             symlink(path.relpath(src_path, start=path.dirname(link_path)), link_path)
-            print(f" [{colored('ok', color='green')}]")
+            if update:
+                print(f" [{colored('ok, updated', color='green')}]")
+            else:
+                print(f" [{colored('ok, new', color='green')}]")
         except FileExistsError:
             print(f" [{colored('skipped', color='yellow')}]")
 

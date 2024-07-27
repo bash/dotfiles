@@ -1,4 +1,4 @@
-set --export LESS -R
+set --export LESS '-F'
 set --export LESSOPEN '|lesspipe.sh %s'
 set --export LESSCOLORIZER bat
 

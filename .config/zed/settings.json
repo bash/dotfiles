@@ -13,7 +13,7 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "One Dark"
+    "dark": "Andromeda"
   },
   "buffer_font_family": "Fira Code",
   "format_on_save": "off",
@@ -21,6 +21,9 @@
     "Rust": {
       "format_on_save": "language_server"
     }
+  },
+  "file_types": {
+    "HTML": ["*.html.tera"]
   },
   "lsp": {
     "rust-analyzer": {

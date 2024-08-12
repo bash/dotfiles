@@ -7,6 +7,7 @@ tap "sass/sass"
 
 # brew "bat" # disabled until the dark-light mode pr is merged and released
 brew "brotli"
+brew "cargo-deny"
 brew "cmake"
 brew "csvlens"
 brew "curl"
@@ -43,8 +44,8 @@ brew "sass/sass/sass"
 brew "trash"
 brew "trunk"
 brew "typst"
-brew "wget2"
 brew "wget"
+brew "wget2"
 brew "woff2"
 brew "zola"
 

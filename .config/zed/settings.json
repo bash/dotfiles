@@ -29,7 +29,8 @@
     "rust-analyzer": {
       "initialization_options": {
         "cargo": {
-          "features": "all"
+          "features": "all",
+          "targetDir": true
         }
       }
     }

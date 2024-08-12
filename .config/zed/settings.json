@@ -34,5 +34,10 @@
         }
       }
     }
+  },
+  "git": {
+    "inline_blame": {
+      "enabled": true
+    }
   }
 }

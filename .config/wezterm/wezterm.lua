@@ -1,7 +1,7 @@
 local wezterm = require 'wezterm'
-local config = {}
+local config = wezterm.config_builder()
 
-function scheme_for_appearance(appearance)
+local function scheme_for_appearance(appearance)
   if appearance:find 'Dark' then
     return 'Catppuccin Frappe'
   else
@@ -9,22 +9,18 @@ function scheme_for_appearance(appearance)
   end
 end
 
-config.font = wezterm.font 'JetBrains Mono'
+config.window_background_opacity = 0.9
+config.macos_window_background_blur = 30
+
+config.font = wezterm.font 'Fira Code'
 config.font_size = 15
-config.use_fancy_tab_bar = false
 
--- Bell
-config.audible_bell = 'Disabled'
-config.visual_bell = {
-  fade_in_duration_ms = 75,
-  fade_out_duration_ms = 75,
-  target = 'CursorColor',
+config.window_decorations = 'RESIZE'
+
+config.window_frame = {
+  font = wezterm.font({ family = 'Fira Code', weight = 'Bold' }),
+  font_size = 14,
 }
-
--- Background
-config.window_background_opacity = 0.95
-config.macos_window_background_blur = 20
-
 
 wezterm.on('window-config-reloaded', function(window, pane)
   local overrides = window:get_config_overrides() or {}

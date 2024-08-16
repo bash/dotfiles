@@ -41,6 +41,7 @@ touch {
 gnome-shell-extensions {
     burn-my-windows@schneegans.github.com
     light-style@gnome-shell-extensions.gcampax.github.com
+    caffeine@patapon.info
 }
 
 vscode-extensions {

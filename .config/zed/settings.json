@@ -23,7 +23,9 @@
     }
   },
   "file_types": {
-    "HTML": ["*.html.tera"]
+    "HTML": ["*.html.tera"],
+    "Fish": ["*.fish.in"],
+    "Shell Script": ["*.bash.in", "*.zsh.in"]
   },
   "lsp": {
     "rust-analyzer": {

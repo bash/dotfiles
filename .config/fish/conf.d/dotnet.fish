@@ -1,4 +1,4 @@
-if status is-interactive && type -q dotnet
+if type -q dotnet
     # Disable welcome message
     set -x DOTNET_NOLOGO 1
     # Disable telemetry

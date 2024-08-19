@@ -1,4 +1,4 @@
-if status is-interactive
+if type -q jq
     # According to `man jq` the colors are in the following order:
     # • color for null
     # • color for false

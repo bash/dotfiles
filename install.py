@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+# /// script
+# dependencies = [
+#     "termcolor~=2.4.0",
+#     "kdl-py~=1.2.0",
+# ]
+# ///
 
 import os
 from os import symlink, path, environ, unlink
@@ -29,7 +35,7 @@ def install():
                 if is_gnome():
                     install_gnome_shell_extensions([n.name for n in node.nodes])
             case "pipx":
-                install_pipx_packages([(n.name, n.args[0]) for n in node.nodes])
+                install_pipx_packages([n.name for n in node.nodes])
             case _:
                 print(colored(f"Unknown node type: {node.name}", color="red"))
                 exit(1)
@@ -106,9 +112,9 @@ def install_vscode_extensions(extensions: list[str]):
         print("\n".join([f"• {ext}" for ext in extra]))
 
 
-def install_pipx_packages(packages: list[(str, str)]) -> None:
-    for package, version in packages:
-        check_call(["pipx", "install", f"{package}~={version}"])
+def install_pipx_packages(packages: list[str]) -> None:
+    for package in packages:
+        check_call(["uv", "tool", "install", package])
 
 
 def install_gnome_shell_extensions(extensions: list[str]) -> None:

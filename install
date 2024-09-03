@@ -1,11 +1,4 @@
 #!/usr/bin/env bash
 
 set -euo pipefail
-
-export PIP_DISABLE_PIP_VERSION_CHECK=1
-export PIP_REQUIRE_VIRTUALENV=1
-
-python3 -m venv .venv
-source .venv/bin/activate
-python3 -m pip install -r requirements.txt
-python3 install.py
+uv run install.py

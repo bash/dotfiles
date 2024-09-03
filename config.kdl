@@ -59,5 +59,7 @@ vscode-extensions {
 }
 
 pipx {
-    black "24.0.0"
+    "black~=24.8.0"
+    "pygments~=2.18.0"
+    yt-dlp
 }

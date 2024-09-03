@@ -15,6 +15,7 @@ from subprocess import check_call, check_output
 from tempfile import NamedTemporaryFile
 from termcolor import colored
 import kdl
+from typing import List, Optional
 
 
 def install():
@@ -40,7 +41,7 @@ def install():
                 print(colored(f"Unknown node type: {node.name}", color="red"))
                 exit(1)
 
-    patch_usr()
+    patch_xdg_data_dir()
 
 
 def update_submodules():
@@ -78,18 +79,17 @@ def touch_files(files: list[str]) -> None:
                 pass
 
 
-def patch_usr() -> None:
+def patch_xdg_data_dir() -> None:
+    patch_dir = "patch-xdg-data-dir"
     patch_files = glob(
-        "**/*.patch", root_dir="patch-usr", recursive=True, include_hidden=True
+        "**/*.patch", root_dir=patch_dir, recursive=True, include_hidden=True
     )
     for f in patch_files:
         file_name = f.removesuffix(".patch")
-        original = path.join("/usr", file_name)
-        if not path.exists(original):
-            original = path.join("/var/lib/flatpak/exports", file_name)
-        patch = path.join("patch-usr", f)
-        patched = path.join(HOME, ".local", file_name)
-        if path.exists(original):
+        original = find_original_xdg_data_file(file_name)
+        patch = path.join(patch_dir, f)
+        patched = path.join(xdg_data_home(), file_name)
+        if original is not None:
             print(f"Patching {pretty_path(original)} -> {pretty_path(patched)}")
             # patch is not happy when trying to read from symlinks, so we copy the source file first
             with NamedTemporaryFile(suffix=".patch") as original_tmp:
@@ -97,7 +97,36 @@ def patch_usr() -> None:
                     original_tmp.write(f.read())
                     original_tmp.flush()
                 makedirs(path.dirname(patched))
-                check_call(["patch", original_tmp.name, patch, "--output", patched])
+                check_call(
+                    [
+                        "patch",
+                        original_tmp.name,
+                        patch,
+                        "--output",
+                        patched,
+                        "--read-only=fail",
+                        "--reject-file=/dev/null",
+                        "--quiet",
+                    ]
+                )
+
+
+def find_original_xdg_data_file(relative_path: str) -> Optional[str]:
+    match = next(
+        (dir for dir in xdg_data_dirs() if path.exists(path.join(dir, relative_path))),
+        None,
+    )
+    if match is not None:
+        return path.join(match, relative_path)
+
+
+def xdg_data_dirs() -> List[str]:
+    data_dirs = os.environ.get("XDG_DATA_DIRS", default="/usr/local/share:/usr/share")
+    return [data_dir for data_dir in data_dirs.split(":")]
+
+
+def xdg_data_home() -> str:
+    return os.environ.get("XDG_DATA_HOME", default=path.join(HOME, ".local", "share"))
 
 
 def install_vscode_extensions(extensions: list[str]):
@@ -114,7 +143,7 @@ def install_vscode_extensions(extensions: list[str]):
 
 def install_pipx_packages(packages: list[str]) -> None:
     for package in packages:
-        check_call(["uv", "tool", "install", package])
+        check_call(["uv", "tool", "install", "--quiet", package])
 
 
 def install_gnome_shell_extensions(extensions: list[str]) -> None:

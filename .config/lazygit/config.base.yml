@@ -1,0 +1,4 @@
+git:
+  autoFetch: false
+  paging:
+    colorArg: always

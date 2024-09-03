@@ -1,5 +1,4 @@
 5c5
 < Exec=/usr/share/code/code %F
 ---
-> Exec=/usr/share/code/code %F --enable-features=UseOzonePlatform --ozone-platform=wayland
-
+> Exec=/usr/share/code/code %F --ozone-platform-hint=auto

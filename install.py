@@ -84,12 +84,14 @@ def patch_xdg_data_dir() -> None:
     patch_files = glob(
         "**/*.patch", root_dir=patch_dir, recursive=True, include_hidden=True
     )
+    should_update_desktop_database = False
     for f in patch_files:
         file_name = f.removesuffix(".patch")
         original = find_original_xdg_data_file(file_name)
         patch = path.join(patch_dir, f)
         patched = path.join(xdg_data_home(), file_name)
         if original is not None:
+            should_update_desktop_database = True
             print(f"Patching {pretty_path(original)} -> {pretty_path(patched)}")
             # patch is not happy when trying to read from symlinks, so we copy the source file first
             with NamedTemporaryFile(suffix=".patch") as original_tmp:
@@ -109,6 +111,8 @@ def patch_xdg_data_dir() -> None:
                         "--quiet",
                     ]
                 )
+    if should_update_desktop_database:
+        check_call(['update-desktop-database', path.join(xdg_data_home(), "applications")])
 
 
 def find_original_xdg_data_file(relative_path: str) -> Optional[str]:

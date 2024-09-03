@@ -20,6 +20,9 @@
   "languages": {
     "Rust": {
       "format_on_save": "language_server"
+    },
+    "Python": {
+      "format_on_save": "language_server"
     }
   },
   "file_types": {

@@ -30,6 +30,7 @@ symlink {
     ".local/bin/reset-desktop-used-apps" os="Linux"
     ".local/bin/smerge" os="Darwin"
     ".local/bin/subl" os="Darwin"
+    ".var/app/dev.zed.Zed/config/zed/settings.json" os="Linux"
     ".vimrc"
     "Library/Application Support/Code/User/settings.json" os="Darwin"
     "Library/Application Support/Code/User/keybindings.json" os="Darwin"

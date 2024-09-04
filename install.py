@@ -52,6 +52,9 @@ def symlink_files(files: list[str]) -> None:
     for file in files:
         src_path = path.join(path.dirname(path.realpath(__file__)), file)
         link_path = path.join(HOME, file)
+        if not path.exists(src_path):
+            print(f"{colored('error', color='red')}: source file '{pretty_path(src_path)}' does not exist")
+            exit(1)
         makedirs(path.dirname(link_path))
         try:
             print(

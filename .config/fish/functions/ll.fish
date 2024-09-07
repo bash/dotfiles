@@ -1,3 +1,3 @@
 function ll
-    eza --long --group --git --hyperlink --binary $argv
+    eza --long --group --hyperlink --binary $argv
 end

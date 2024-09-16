@@ -37,6 +37,16 @@ local lazy_opts = {
 -- Dependencies
 require("lazy").setup({
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate", config = function ()
+        local configs = require("nvim-treesitter.configs")
+        configs.setup({
+            ensure_installed = { "just" },
+            sync_install = false,
+            highlight = { enable = true },
+            indent = { enable = true },
+          })
+      end
+  },
   'nvim-lualine/lualine.nvim',
 }, lazy_opts)
 

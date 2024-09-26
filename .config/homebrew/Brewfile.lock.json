@@ -2224,6 +2224,30 @@
         "options": {
           "full_name": "font-departure-mono"
         }
+      },
+      "font-vollkorn": {
+        "version": "latest",
+        "options": {
+          "full_name": "font-vollkorn"
+        }
+      },
+      "font-fira-code": {
+        "version": "6.2",
+        "options": {
+          "full_name": "font-fira-code"
+        }
+      },
+      "font-jetbrains-mono": {
+        "version": "2.304",
+        "options": {
+          "full_name": "font-jetbrains-mono"
+        }
+      },
+      "font-inter": {
+        "version": "4.0",
+        "options": {
+          "full_name": "font-inter"
+        }
       }
     }
   },

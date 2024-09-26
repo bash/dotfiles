@@ -49,4 +49,8 @@ brew "zola"
 
 cask "eloston-chromium"
 cask "font-departure-mono"
+cask "font-fira-code"
+cask "font-inter"
+cask "font-jetbrains-mono"
+cask "font-vollkorn"
 cask "qlmarkdown"

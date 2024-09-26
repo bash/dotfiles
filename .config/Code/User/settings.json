@@ -36,6 +36,5 @@
     "git.enableStatusBarSync": false,
     "update.showReleaseNotes": false,
     "terminal.integrated.enableImages": true,
-    "terminal.integrated.enableVisualBell": true,
-    "workbench.colorTheme": "Default Light Modern",
+    "terminal.integrated.enableVisualBell": true
 }

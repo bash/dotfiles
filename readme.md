@@ -8,20 +8,6 @@
 	format = ssh
 [gpg "ssh"]
 	program = "/opt/1Password/op-ssh-sign"
-[includeIf "gitdir:~/Source/GitHub/"]
-	path = "~/.config/git/github.gitconfig"
-```
-
-### ~/.config/git/github.gitconfig
-```gitconfig
-[user]
-	email = "..."
-```
-
-### ~/.zshrc.local
-```bash
-hash -d Source=/path/to/source
-// ..
 ```
 
 ### ~/.ssh/config
@@ -53,6 +39,8 @@ sudo authselect apply-changes
 
 ## Tools
 * [delta](https://github.com/dandavison/delta)
+* [just](https://just.systems/)
+* [gimoji](https://github.com/zeenix/gimoji)
 * [ghcup](https://www.haskell.org/ghcup/)
 * [rustup](https://rustup.rs/)
 * [eza](https://github.com/eza-community/eza): `sudo dnf install -y eza`
@@ -72,12 +60,3 @@ sudo authselect apply-changes
 * [Cartridges](https://flathub.org/en-GB/apps/hu.kramo.Cartridges)
 * [Tuba](https://flathub.org/en-GB/apps/dev.geopjr.Tuba)
 
-## Homebrew
-To install dependencies from Homebrew run:
-```shell
-brew bundle install --global
-```
-and to remove unused formula run:
-```shell
-brew bundle --force cleanup --global
-```

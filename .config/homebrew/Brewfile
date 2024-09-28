@@ -5,6 +5,7 @@ tap "homebrew/services"
 
 # brew "bat" # disabled until the dark-light mode pr is merged and released
 brew "brotli"
+brew "cargo-binstall"
 brew "cmake"
 brew "csvlens"
 brew "curl"

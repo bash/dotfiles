@@ -31,7 +31,8 @@ def install():
             case "touch":
                 touch_files(file_list_from_node(node))
             case "vscode-extensions":
-                install_vscode_extensions([n.name for n in node.nodes])
+                # install_vscode_extensions([n.name for n in node.nodes])
+                pass
             case "gnome-shell-extensions":
                 if is_gnome():
                     install_gnome_shell_extensions([n.name for n in node.nodes])

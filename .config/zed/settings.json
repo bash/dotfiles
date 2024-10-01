@@ -33,10 +33,21 @@
   "lsp": {
     "rust-analyzer": {
       "initialization_options": {
+        "check": {
+          "command": "clippy"
+        },
         "cargo": {
           "features": "all",
           "targetDir": true
-        }
+        },
+        "imports": {
+          "group": {
+            "enable": false
+          },
+          "granularity": {
+            "group": "module"
+          }
+        },
       }
     }
   },

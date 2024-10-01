@@ -1,5 +1,5 @@
 {
-	"font_size": 18,
+	"font_size": 12,
 	"color_scheme": "auto",
-	"draw_white_space": ["selection", "trailing", "all_tabs"]
+	"draw_white_space": ["selection", "trailing", "all_tabs"],
 }

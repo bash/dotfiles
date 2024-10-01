@@ -7,6 +7,9 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "features": {
+    "inline_completion_provider": "none"
+  },
   "show_inline_completions": false,
   "ui_font_size": 16,
   "buffer_font_size": 14,
@@ -25,7 +28,7 @@
   "assistant": {
     "enabled": false,
     "button": false,
-    "version": "1"
+    "version": "2"
   },
   "chat_panel": {
     "button": false

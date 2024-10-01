@@ -15,6 +15,24 @@
     "light": "One Light",
     "dark": "Andromeda"
   },
+  "tabs": {
+    "file_icons": true
+  },
+  "telemetry": {
+      "diagnostics": false,
+      "metrics": false
+  },
+  "assistant": {
+    "enabled": false,
+    "button": false,
+    "version": "1"
+  },
+  "chat_panel": {
+    "button": false
+  },
+  "collaboration_panel": {
+    "button": false
+  },
   "buffer_font_family": "Fira Code",
   "format_on_save": "off",
   "languages": {
@@ -47,7 +65,7 @@
           "granularity": {
             "group": "module"
           }
-        },
+        }
       }
     }
   },

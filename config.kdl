@@ -28,6 +28,7 @@ symlink {
     ".editorconfig"
     ".local/bin/code" os="Linux"
     ".local/bin/flacs2mp3s"
+    ".local/bin/mkweblink"
     ".local/bin/reset-desktop-used-apps" os="Linux"
     ".local/bin/smerge" os="Darwin"
     ".local/bin/subl" os="Darwin"

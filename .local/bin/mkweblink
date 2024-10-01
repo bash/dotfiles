@@ -1,0 +1,24 @@
+#!/usr/bin/env python3
+
+import html
+import argparse
+
+parser = argparse.ArgumentParser(prog='mkweblink')
+parser.add_argument('url')
+args = parser.parse_args()
+
+template = """<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+        <meta http-equiv="refresh" content="0; url={{url_attr}}">
+        <meta name="color-scheme" content="light dark">
+    </head>
+    <body>
+         <p>Redirecting to <a href="{{url_attr}}">{{url}}</a>&hellip;</p>
+    </body>
+</html>"""
+
+url = args.url
+print(template.replace("{{url}}", html.escape(url)).replace("{{url_attr}}", html.escape(url, quote=True)))

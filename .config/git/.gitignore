@@ -1,5 +1,6 @@
 .idea/
 .vscode/
+.zed/
 nupkg/
 .DS_Store
 *.swp

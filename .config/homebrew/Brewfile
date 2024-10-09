@@ -4,6 +4,7 @@ tap "homebrew/bundle"
 tap "homebrew/services"
 
 # brew "bat" # disabled until the dark-light mode pr is merged and released
+brew "appstream" # needed for libadwaita
 brew "brotli"
 brew "cargo-binstall"
 brew "cmake"
@@ -19,6 +20,7 @@ brew "gh"
 brew "git"
 brew "git-delta"
 brew "graphicsmagick"
+brew "gstreamer" # needed for libadwaita
 brew "jpegoptim"
 brew "just"
 brew "jq"

@@ -26,6 +26,7 @@ brew "just"
 brew "jq"
 brew "less"
 brew "lesspipe"
+brew "libsass" # needed for libadwaita
 brew "libzen" # needed for egui apps
 brew "make"
 brew "meson"
@@ -41,6 +42,7 @@ brew "pngcrush"
 brew "podman"
 brew "python@3.12", link: true
 brew "ripgrep"
+brew "sassc" # needed for libadwaita
 brew "trash"
 brew "trunk"
 brew "typst"

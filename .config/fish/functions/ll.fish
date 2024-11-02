@@ -1,5 +1,3 @@
-if type -q eza
-    function ll --wraps eza
-        eza --long --group --hyperlink --binary $argv
-    end
+function ll --wraps ls
+    ls -lGh --hyperlink --color=auto $argv
 end

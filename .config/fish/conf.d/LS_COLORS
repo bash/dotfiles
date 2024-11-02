@@ -1,0 +1,68 @@
+EXEC                  35;1
+
+# Text files
+*.md                  32
+*.html                32
+*.tera                32
+*.css                 32
+*.scss                32
+*.txt                 32
+*.1                   32
+*README               32
+
+# Config Files
+*.toml                94
+*.json                94
+*.patch               94
+*.conf                94
+*.yml                 94
+*browserslist         94
+*.kdl                 94
+*.sublime-settings    94
+*rc                   94
+*Brewfile             94
+*LS_COLORS            94
+*.desktop             94
+*.editorconfig        94
+*.ron                 94
+*.gitignore           94
+*.gitattributes       94
+*.gitmodules          94
+
+# Binary Files
+*.sqlite              35
+*.png                 35
+*.svg                 35 # (Technically not a binary file but an image)
+*.jpg                 35
+*.webp                35
+*.bin                 35
+*.glb                 35
+*.gltf                35
+*.ogg                 35
+*.gz                  35
+*.gif                 35
+
+# Source Code
+*.sql                 33
+*.py                  33
+*.rs                  33
+*.fish                33
+*.sh                  33
+*.lua                 33
+*.wgsl                33
+*.c                   33
+*.h                   33
+
+# Important project files
+*Cargo.toml           33;1
+*Justfile             33;1
+*Makefile             33;1
+*meson.build          33;1
+*readme.md            33;1
+*Containerfile        33;1
+*package.json         33;1
+
+# Boring files
+*license.txt           0
+*licence-mit.txt       0
+*license-apache.txt    0

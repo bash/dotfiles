@@ -1,7 +1,5 @@
-if test (uname) = "Darwin"
-    if type -q gmake
-        function make
-            gmake $argv
-        end
+if test (uname) = "Darwin"; and type -q gmake
+    function make --wraps gmake
+        gmake $argv
     end
 end

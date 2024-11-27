@@ -1,3 +1,4 @@
+set -x PAGER 'less'
 set -x LESS '-FR'
 set -x LESSOPEN '|lesspipe.sh %s'
 

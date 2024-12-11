@@ -11,6 +11,7 @@ symlink {
     ".config/fish/functions"
     ".config/git/.gitignore"
     ".config/git/config"
+    ".config/helix"
     ".config/kitty" os="Linux"
     ".config/lazygit/config.base.yml"
     ".config/lazygit/config.dark.yml"

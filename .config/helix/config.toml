@@ -1,0 +1,3 @@
+[keys.normal]
+C-e = "goto_line_end"
+C-a = "goto_line_start"

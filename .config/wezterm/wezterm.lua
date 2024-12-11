@@ -18,18 +18,14 @@ function get_appearance()
   return 'Dark'
 end
 
-local font_family = 'Departure Mono'
-
 config.window_background_opacity = 0.9
 config.macos_window_background_blur = 30
 
-config.font = wezterm.font(font_family)
 config.font_size = 15
 
 config.window_decorations = 'INTEGRATED_BUTTONS|RESIZE'
 
 config.window_frame = {
-  font = wezterm.font({ family = font_family, weight = 'Bold' }),
   font_size = 14,
 }
 

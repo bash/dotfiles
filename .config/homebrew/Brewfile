@@ -4,6 +4,7 @@ tap "homebrew/bundle"
 tap "homebrew/services"
 
 # brew "bat" # disabled until the dark-light mode pr is merged and released
+brew "age"
 brew "appstream" # needed for libadwaita
 brew "brotli"
 brew "cargo-binstall"
@@ -21,6 +22,7 @@ brew "git"
 brew "git-delta"
 brew "graphicsmagick"
 brew "gstreamer" # needed for libadwaita
+brew "helix"
 brew "jpegoptim"
 brew "just"
 brew "jq"
@@ -29,6 +31,7 @@ brew "lesspipe"
 brew "libsass" # needed for libadwaita
 brew "libzen" # needed for egui apps
 brew "make"
+brew "man-db"
 brew "meson"
 brew "mkcert"
 brew "mprocs"
@@ -43,6 +46,7 @@ brew "podman"
 brew "python@3.12", link: true
 brew "ripgrep"
 brew "sassc" # needed for libadwaita
+brew "syncthing"
 brew "trash"
 brew "trunk"
 brew "typst"
@@ -59,3 +63,4 @@ cask "font-inter"
 cask "font-jetbrains-mono"
 cask "font-vollkorn"
 cask "qlmarkdown"
+cask "servo"

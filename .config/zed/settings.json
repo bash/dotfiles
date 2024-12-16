@@ -31,6 +31,7 @@
     "version": "2"
   },
   "chat_panel": {
+    "dock": "left",
     "button": false
   },
   "collaboration_panel": {

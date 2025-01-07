@@ -6,6 +6,7 @@ symlink {
     ".config/Code/User/settings.json" os="Linux"
     ".config/Code/User/keybindings.json" os="Linux"
     ".config/color-scheme-sync.d" os="Linux"
+    ".config/bat"
     ".config/fish/conf.d"
     ".config/fish/config.fish"
     ".config/fish/functions"

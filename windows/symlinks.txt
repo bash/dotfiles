@@ -1,4 +1,4 @@
-Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
+Documents\PowerShell\Microsoft.PowerShell_profile.ps1
 AppData\Local\1Password\config\ssh\agent.toml -> ..\.config\1Password\ssh\agent.toml
 AppData\Roaming\Code\User\settings.json -> ..\.config\Code\User\settings.json
 AppData\Roaming\Code\User\keybindings.json -> ..\.config\Code\User\keybindings.json

@@ -2,17 +2,16 @@
 
 # From <https://superuser.com/a/1748972>:
 Set-PSReadLineOption -Colors @{
-  Command            = 'Black'
-  Number             = 'DarkGray'
-  Member             = 'DarkGray'
-  Operator           = 'DarkGray'
-  Type               = 'DarkGray'
-  Variable           = 'DarkGreen'
-  Parameter          = 'DarkGreen'
-  ContinuationPrompt = 'DarkGray'
-  Default            = 'DarkGray'
+  Command            = "`e[33m"
+  Number             = "`e[32m"
+  Member             = "`e[35m"
+  Operator           = "`e[35m"
+  Type               = "`e[36m"
+  Variable           = "`e[34m"
+  Parameter          = "`e[0m"
+  ContinuationPrompt = "`e[2m"
+  Default            = "`e[0m"
 }
-
 
 # History search is bound to F8/Shift-F8 by default
 Set-PSReadLineKeyHandler -Chord UpArrow -Function HistorySearchBackward

@@ -1,9 +1,18 @@
+set windows-shell := ["powershell.exe", "-c"]
+
 default:
     just --list
 
 # Installs dotfiles to $HOME
+[unix]
 install:
     ./install
+
+# Installs dotfiles to $HOME
+[windows]
+[working-directory("windows")]
+install:
+    .\install.cmd
 
 # Uninstalls unused Homebrew formulas
 brew-cleanup *args:

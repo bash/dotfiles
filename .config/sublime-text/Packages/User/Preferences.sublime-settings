@@ -2,4 +2,9 @@
 	"font_size": 12,
 	"color_scheme": "auto",
 	"draw_white_space": ["selection", "trailing", "all_tabs"],
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"index_files": true,
 }

@@ -19,16 +19,17 @@
     "dark": "Andromeda"
   },
   "tabs": {
-    "file_icons": true
+    "file_icons": true,
+    "git_status": true
   },
   "telemetry": {
       "diagnostics": false,
       "metrics": false
   },
   "assistant": {
+    "version": "2",
     "enabled": false,
-    "button": false,
-    "version": "2"
+    "button": false
   },
   "chat_panel": {
     "dock": "left",
@@ -77,5 +78,11 @@
     "inline_blame": {
       "enabled": true
     }
+  },
+  "terminal": {
+    "detect_venv": "off"
+  },
+  "notification_panel": {
+    "button": false
   }
 }

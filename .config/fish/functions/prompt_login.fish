@@ -1,6 +1,6 @@
 function prompt_login --description "display user name for the prompt"
-    # If we're running inside toolbox, show icon.
-    if set -q TOOLBOX_PATH
+    # If we're running inside toolbox or distrobox, show icon.
+    if set -q CONTAINER_ID
         echo -n -s (set_color 613583) "⬢ " (set_color normal)
     end
 

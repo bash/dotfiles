@@ -30,7 +30,7 @@ def parse_symlink(input: str) -> tuple[str, str]:
     else:
         return (input, input)
 
-def symlink_files(files: list[(str, str)]) -> None:
+def symlink_files(files: list[tuple[str, str]]) -> None:
     for link_name, dest_name in files:
         src_path = path.realpath(path.join(path.dirname(path.realpath(__file__)), dest_name))
         link_path = path.join(HOME, link_name)

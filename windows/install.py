@@ -7,7 +7,7 @@
 import os
 from os import symlink, path, unlink
 from pathlib import Path
-from subprocess import check_call
+from subprocess import DEVNULL, check_call
 from typing import Optional
 from termcolor import colored
 
@@ -19,8 +19,8 @@ def install():
         symlinks = [parse_symlink(line) for line in f.readlines()]
     symlink_files(symlinks)
 
-    with open(path.join(path.dirname(__file__), "symlinks.txt")) as f:
-        env_vars = [parse_env_var(line) for line in f.readlines() if line is not None]
+    with open(path.join(path.dirname(__file__), "environment.txt")) as f:
+        env_vars = [pair for pair in (parse_env_var(line) for line in f.readlines()) if pair is not None]
     set_env_vars(env_vars)
 
 
@@ -74,7 +74,8 @@ def symlink_files(files: list[tuple[str, str]]) -> None:
 
 def set_env_vars(env_vars: list[tuple[str, str]]) -> None:
     for (name, value) in env_vars:
-        check_call(["setx", name, value])
+        check_call(["setx", name, value], stdout=DEVNULL)
+        print(f"Env var {name} = '{value}' [{colored('ok', color='green')}]")
 
 
 HOME = str(Path.home())

@@ -1,0 +1,24 @@
+CARGO_REGISTRY_TOKEN=op://Development/crates.io-token/credential
+
+# Disable welcome/version messages
+DOTNET_NOLOGO=1
+# Disable telemetry
+DOTNET_CLI_TELEMETRY_OPTOUT=1
+# Suppress warnings when using a preview SDK
+SuppressNETCoreSdkPreviewMessage=1
+# Environment for hosting
+DOTNET_ENVIRONMENT=Development
+# Stop `Verify` from automatically opening a diff tool
+# I want to use `dotnet verify review` instead.
+# See: https://github.com/VerifyTests/DiffEngine?tab=readme-ov-file#disable-for-a-machineprocess
+DiffEngine_Disabled=true
+
+# Disable update notifications
+GH_NO_UPDATE_NOTIFIER=1
+
+# Disable update notifications for NPM
+# https://docs.npmjs.com/cli/v6/using-npm/config#update-notifier
+NPM_CONFIG_UPDATE_NOTIFIER=false
+# Disable funding notifications
+# https://docs.npmjs.com/cli/v6/using-npm/config#fund
+NPM_CONFIG_FUND=false

@@ -1,4 +1,9 @@
-﻿Set-Alias -Name subl -Value 'C:\Program Files\Sublime Text\subl.exe'
+﻿Import-Module posh-git
+$global:VcsPromptStatuses = @()
+
+Set-Alias -Name ll -Value dir
+Set-Alias -Name subl -Value 'C:\Program Files\Sublime Text\subl.exe'
+Set-Alias -Name smerge -Value 'C:\Program Files\Sublime Merge\smerge.exe'
 
 # From <https://superuser.com/a/1748972>:
 Set-PSReadLineOption -Colors @{

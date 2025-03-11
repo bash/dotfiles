@@ -4,3 +4,6 @@
 [submodule ".config/kitty/catppuccin"]
 	path = .config/kitty/catppuccin
 	url = https://github.com/catppuccin/kitty.git
+[submodule "windows/Documents/PowerShell/Modules/posh-git"]
+	path = windows/Documents/PowerShell/Modules/posh-git
+	url = https://github.com/dahlbyk/posh-git

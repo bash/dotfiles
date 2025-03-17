@@ -1,4 +1,5 @@
 ﻿. "$PSScriptRoot\Completions\just.ps1"
+. "$PSScriptRoot\Completions\dotnet.ps1"
 Import-Module posh-git
 $global:VcsPromptStatuses = @()
 

@@ -36,7 +36,15 @@ function prompt {
     Write-Git-Branch-Indicator
 
     Write-Host
-    return "▷ "
+
+    $output = ""
+    $loc = $executionContext.SessionState.Path.CurrentLocation
+    if ($loc.Provider.Name -eq "FileSystem") {
+        # Communicate the CWD to the Terminal
+        $output += "$([char]27)]9;9;`"$($loc.ProviderPath)`"$([char]27)\"
+    }
+    $output += "▷ "
+    return $output
 }
 
 function env {

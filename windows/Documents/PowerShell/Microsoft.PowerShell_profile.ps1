@@ -1,4 +1,5 @@
-﻿Import-Module posh-git
+﻿. "$PSScriptRoot\Completions\just.ps1"
+Import-Module posh-git
 $global:VcsPromptStatuses = @()
 
 Set-Alias -Name ll -Value dir

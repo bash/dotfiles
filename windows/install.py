@@ -14,6 +14,7 @@ from termcolor import colored
 
 def install():
     update_submodules()
+    update_completions()
 
     with open(path.join(path.dirname(__file__), "symlinks.txt")) as f:
         symlinks = [parse_symlink(line) for line in f.readlines()]
@@ -27,6 +28,11 @@ def install():
 def update_submodules():
     check_call(["git", "submodule", "update", "--init", "--recursive"])
 
+def update_completions():
+    completions_dir = path.join(HOME, "Documents", "PowerShell", "Completions")
+    makedirs(completions_dir)
+    with open(path.join(completions_dir, "just.ps1"), "w") as f:
+        check_call(["just", "--completions", "powershell"], stdout=f)
 
 def parse_symlink(input: str) -> tuple[str, str]:
     input = input.strip()

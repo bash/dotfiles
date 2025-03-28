@@ -92,6 +92,7 @@ function Write-Git-Dirty-State {
 
 function Get-Git-Upstream-Indicator {
     $upstream = git rev-parse --abbrev-ref --symbolic-full-name '@{u}'
+    if (-not $?) { return "~" }
     $count = git rev-list --count --left-right "$upstream...HEAD"
 
     switch -Wildcard ($count) {

@@ -45,6 +45,8 @@
 	enabled = true
 [include]
 	path = ~/.config/git/local.gitconfig
+[gpg]
+	format = ssh
 [gpg "ssh"]
 	allowedSignersFile = ~/.git-allowed-signers
 [filter "lfs"]

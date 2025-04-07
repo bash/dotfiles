@@ -48,9 +48,10 @@ touch {
 }
 
 gnome-shell-extensions {
+    auto-move-windows@gnome-shell-extensions.gcampax.github.com
     burn-my-windows@schneegans.github.com
-    light-style@gnome-shell-extensions.gcampax.github.com
     caffeine@patapon.info
+    light-style@gnome-shell-extensions.gcampax.github.com
 }
 
 vscode-extensions {

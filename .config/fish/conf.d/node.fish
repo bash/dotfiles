@@ -6,4 +6,7 @@ if type -q npm
     # Disable funding notifications
     # https://docs.npmjs.com/cli/v6/using-npm/config#fund
     set -x NPM_CONFIG_FUND false
+
+    set -x NPM_CONFIG_PREFIX "$HOME/.local/lib/node_modules"
+    fish_add_path --path "$HOME/.local/lib/node_modules/bin"
 end

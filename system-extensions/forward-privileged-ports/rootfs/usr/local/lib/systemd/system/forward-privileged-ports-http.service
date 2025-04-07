@@ -1,0 +1,9 @@
+[Unit]
+Description=Proxies :80 to :1080
+Requires=forward-privileged-ports-http.socket
+After=forward-privileged-ports-http.socket
+
+[Service]
+Type=notify
+ExecStart=/usr/lib/systemd/systemd-socket-proxyd 127.0.0.1:1080
+PrivateTmp=yes

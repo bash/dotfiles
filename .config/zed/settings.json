@@ -8,9 +8,9 @@
 // from the command palette or from `Zed` application menu.
 {
   "features": {
-    "inline_completion_provider": "none"
+    "edit_prediction_provider": "none"
   },
-  "show_inline_completions": false,
+  "show_edit_predictions": false,
   "ui_font_size": 16,
   "buffer_font_size": 14,
   "theme": {
@@ -33,7 +33,7 @@
   },
   "chat_panel": {
     "dock": "left",
-    "button": false
+    "button": "never"
   },
   "collaboration_panel": {
     "button": false

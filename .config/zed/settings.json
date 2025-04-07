@@ -38,7 +38,7 @@
   "collaboration_panel": {
     "button": false
   },
-  "buffer_font_family": "Fira Code",
+  "buffer_font_family": "Adwaita Mono",
   "format_on_save": "off",
   "languages": {
     "Rust": {

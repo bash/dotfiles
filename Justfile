@@ -32,9 +32,11 @@ portable-attach service-name:
     sudo setenforce 0
     sudo portablectl attach {{service-name}} --enable --now
     sudo setenforce 1
+    sudo systemctl daemon-reload
 
 [linux]
 portable-detach service-name:
     sudo setenforce 0
     sudo portablectl detach {{service-name}} --enable --now
     sudo setenforce 1
+    sudo systemctl daemon-reload

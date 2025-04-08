@@ -12,11 +12,10 @@ import platform
 from pathlib import Path
 from glob import iglob as glob
 from subprocess import check_call, check_output
-from tempfile import NamedTemporaryFile, mkdtemp
+from tempfile import NamedTemporaryFile
 from termcolor import colored
 import kdl
 from typing import List, Optional
-import shutil
 
 
 def install():
@@ -44,7 +43,6 @@ def install():
                 exit(1)
 
     patch_xdg_data_dir()
-    install_system_extensions()
 
 
 def update_submodules():
@@ -207,19 +205,6 @@ def nodes_for_current_os(nodes: list[kdl.Node]) -> list[kdl.Node]:
         if "os" not in node.props or node.props["os"] == platform.system()
     ]
 
-def install_system_extensions():
-    extensions_dir = path.join(path.dirname(__file__), 'system-extensions')
-    extensions = [ext for ext in glob('*', root_dir=extensions_dir) if path.exists(path.join(extensions_dir, ext, 'enabled'))]
-    extensions_target_dir = '/run/extensions'
-    for ext in extensions:
-        print(f"System extension '{ext}'", end="")
-        check_call(['sudo', 'mkdir', '-p', extensions_target_dir])
-        check_call(['sudo', 'cp', '--recursive', Path(path.join(extensions_dir, ext, 'rootfs')).resolve(), '--no-target-directory', path.join(extensions_target_dir, ext)])
-        print(f" [{colored('ok, updated', color='green')}]")
-    check_call(['sudo', 'restorecon', '-RFv', extensions_target_dir])
-    check_call(['sudo', 'systemctl', 'reload', 'systemd-sysext'])
-    for ext in extensions:
-        check_call(['sudo', path.join(extensions_dir, ext, 'enable.sh')])
 
 HOME = str(Path.home())
 

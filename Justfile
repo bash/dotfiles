@@ -26,3 +26,15 @@ brew-install:
 set-custom-folder-icons:
 	gio set ~/Source metadata::custom-icon-name 'folder-git'
 	gio set ~/Audiobooks metadata::custom-icon-name 'folder-books'
+
+[linux]
+portable-attach service-name:
+    sudo setenforce 0
+    sudo portablectl attach {{service-name}} --enable --now
+    sudo setenforce 1
+
+[linux]
+portable-detach service-name:
+    sudo setenforce 0
+    sudo portablectl detach {{service-name}} --enable --now
+    sudo setenforce 1

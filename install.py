@@ -16,6 +16,7 @@ from tempfile import NamedTemporaryFile
 from termcolor import colored
 import kdl
 from typing import List, Optional
+import shutil
 
 
 def install():
@@ -43,6 +44,7 @@ def install():
                 exit(1)
 
     patch_xdg_data_dir()
+    install_portable_services()
 
 
 def update_submodules():
@@ -204,6 +206,20 @@ def nodes_for_current_os(nodes: list[kdl.Node]) -> list[kdl.Node]:
         for node in nodes
         if "os" not in node.props or node.props["os"] == platform.system()
     ]
+
+def install_portable_services():
+    if shutil.which('portablectl') is not None:
+        portables_dir = path.join(path.dirname(__file__), 'portables')
+        for name in glob('*', root_dir=portables_dir):
+            install_portable_service(name, path.join(portables_dir, name))
+
+def install_portable_service(name, source_dir):
+    portables_dir = '/var/lib/portables/'
+    target_file_name = path.join(portables_dir, f'{name}.raw')
+    check_call(['mkosi'], cwd=source_dir)
+    check_call(['mkdir', '-p', portables_dir])
+    check_call(['sudo', 'cp', path.join(source_dir, 'image.raw'), target_file_name])
+    check_call(['sudo', 'restorecon', target_file_name])
 
 
 HOME = str(Path.home())

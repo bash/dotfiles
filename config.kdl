@@ -50,7 +50,10 @@ gnome-shell-extensions {
     auto-move-windows@gnome-shell-extensions.gcampax.github.com
     burn-my-windows@schneegans.github.com
     caffeine@patapon.info
+    foresight@pesader.dev
     light-style@gnome-shell-extensions.gcampax.github.com
+    native-window-placement@gnome-shell-extensions.gcampax.github.com
+    status-icons@gnome-shell-extensions.gcampax.github.com
 }
 
 vscode-extensions {

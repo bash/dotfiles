@@ -1,0 +1,11 @@
+[Unit]
+Description=Forwards port :53 -> :1053
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/forward-dns-port
+PrivateTmp=yes
+BindReadOnlyPaths=/etc/forward-ports/dns-interface
+
+[Install]
+WantedBy=multi-user.target

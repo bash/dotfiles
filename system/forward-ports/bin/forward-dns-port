@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+config_file=/etc/forward-ports/dns-interface
+interface=$(cat "$config_file")
+if [[ -z "$interface" ]]; then
+    echo "You must configure the interface to bind on (e.g. wlo1) in $config_file"
+    exit 1
+fi
+
+ip_address=$(ip --json -4 addr show dev "$interface" \
+    | jq -j 'first | .addr_info | first | .local')
+if [[ -z "$ip_address" ]]; then
+    echo "Failed to determine IP address for interface $interface"
+    exit 1
+fi
+
+uredir -n "$ip_address:53" 127.0.0.1:1053

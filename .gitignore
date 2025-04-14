@@ -2,3 +2,4 @@
 /.config/beets/state.pickle
 /portables/*/image*
 /system/_rpms
+__pycache__/

@@ -7,7 +7,7 @@
 # ///
 
 import os
-from os import symlink, path, environ, unlink
+from os import path, symlink, unlink
 import platform
 from pathlib import Path
 from glob import iglob as glob
@@ -33,9 +33,6 @@ def install():
             case "vscode-extensions":
                 # install_vscode_extensions([n.name for n in node.nodes])
                 pass
-            case "gnome-shell-extensions":
-                if is_gnome():
-                    install_gnome_shell_extensions([n.name for n in node.nodes])
             case "pipx":
                 install_pipx_packages([n.name for n in node.nodes])
             case _:
@@ -152,46 +149,6 @@ def install_vscode_extensions(extensions: list[str]):
 def install_pipx_packages(packages: list[str]) -> None:
     for package in packages:
         check_call(["uv", "tool", "install", "--quiet", package])
-
-
-def install_gnome_shell_extensions(extensions: list[str]) -> None:
-    installed = check_output(["gnome-extensions", "list"]).decode("utf-8").splitlines()
-    for extension in set(extensions) - set(installed):
-        install_gnome_shell_extension(extension)
-    for extension in extensions:
-        enable_gnome_shell_extension(extension)
-
-
-def install_gnome_shell_extension(extension: str) -> None:
-    check_call(
-        [
-            "busctl",
-            "--user",
-            "call",
-            "org.gnome.Shell.Extensions",
-            "/org/gnome/Shell/Extensions",
-            "org.gnome.Shell.Extensions",
-            "InstallRemoteExtension",
-            "s",
-            extension,
-        ]
-    )
-
-
-def enable_gnome_shell_extension(extension: str) -> None:
-    check_call(
-        [
-            "gnome-extensions",
-            "enable",
-            extension,
-        ]
-    )
-
-
-def is_gnome():
-    return (
-        "XDG_CURRENT_DESKTOP" in environ and environ["XDG_CURRENT_DESKTOP"] == "GNOME"
-    )
 
 
 def file_list_from_node(symlink_node: kdl.Node) -> list[str]:

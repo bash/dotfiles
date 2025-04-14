@@ -62,7 +62,7 @@ def _print_action(
         print(f"  {label}:")
         for ext in affected:
             if type(ext) == Extension:
-                print(f"    • {ext.name}")
+                print(f"    • {ext.name} ({ext.uuid})")
             else:
                 print(f"    • {ext.uuid}")
 

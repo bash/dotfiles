@@ -74,6 +74,7 @@ def symlink_files(files: list[str]) -> None:
 def touch_files(files: list[str]) -> None:
     for file in files:
         dest_path = path.join(HOME, file)
+        makedirs(path.dirname(dest_path))
         if not os.path.exists(dest_path):
             print(f"Touching '{dest_path}'...")
             with open(dest_path, "a"):

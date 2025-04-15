@@ -44,6 +44,7 @@ symlink {
 
 touch {
     ".config/git/local.gitconfig"
+    ".config/containers/nodocker"
 }
 
 vscode-extensions {

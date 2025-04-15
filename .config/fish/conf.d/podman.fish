@@ -1,0 +1,1 @@
+set -x PODMAN_COMPOSE_WARNING_LOGS false

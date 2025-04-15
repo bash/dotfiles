@@ -5,5 +5,4 @@ extensions = [
     "foresight@pesader.dev",
     "light-style@gnome-shell-extensions.gcampax.github.com",
     "nightthemeswitcher@romainvigier.fr",
-    "status-icons@gnome-shell-extensions.gcampax.github.com",
 ]

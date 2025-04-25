@@ -33,9 +33,7 @@ sudo authselect apply-changes
 ```
 
 ## Fonts
-* [Last Resort Font](https://github.com/unicode-org/last-resort-font)
-* [JetBrains Mono](https://www.jetbrains.com/lp/mono/)
-* [Microsoft Core Fonts](https://mscorefonts2.sourceforge.net/)
+* [`-apple-system`](https://codeberg.org/tautropfli/apple-system-font)
 
 ## Tools
 * [delta](https://github.com/dandavison/delta)
@@ -48,6 +46,7 @@ sudo authselect apply-changes
    Needed for:
    * 1Password (otherwise only switches when mode is toggled, but not correct on startup)
    * Sublime Merge
+   Also might require the `gnome-themes-extra` to fully work.
 * [mdcat](https://github.com/swsnr/mdcat)
 * wget2: `sudo dnf install -y wget2 && sudo dnf remove -y wget`
 

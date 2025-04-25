@@ -16,15 +16,17 @@ from os import environ
 def apply(requested: List[RequestedExtension]) -> None:
     if _is_gnome():
         if not get_user_extensions_enabled():
-            print("\x1b[32m\x1b[1merror: user extensions are not enabled, skipping\x1b[0m")
+            print(
+                "\x1b[32m\x1b[1merror: user extensions are not enabled, skipping\x1b[0m"
+            )
             return
         available = list_extensions()
         planned = plan(diff(available, requested))
         _print_plan(planned)
         if not planned.is_empty() and _confirm():
-            print('Applying changes ',end='', flush=True)
+            print("Applying changes ", end="", flush=True)
             _execute(planned)
-            print('[\x1b[32mok\x1b[0m]')
+            print("[\x1b[32mok\x1b[0m]")
 
 
 def _execute(plan: Plan):

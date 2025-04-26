@@ -39,16 +39,12 @@ sudo authselect apply-changes
 * [delta](https://github.com/dandavison/delta)
 * [just](https://just.systems/)
 * [gimoji](https://github.com/zeenix/gimoji)
-* [ghcup](https://www.haskell.org/ghcup/)
 * [rustup](https://rustup.rs/)
-* [eza](https://github.com/eza-community/eza): `sudo dnf install -y eza`
 * [color-scheme-sync](https://github.com/bash/color-scheme-sync) \
    Needed for:
    * 1Password (otherwise only switches when mode is toggled, but not correct on startup)
    * Sublime Merge
    Also might require the `gnome-themes-extra` to fully work.
-* [mdcat](https://github.com/swsnr/mdcat)
-* wget2: `sudo dnf install -y wget2 && sudo dnf remove -y wget`
 
 ## Linux Apps
 * [Warp](https://apps.gnome.org/en-GB/app/app.drey.Warp/)

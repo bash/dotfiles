@@ -16,7 +16,7 @@ from tempfile import NamedTemporaryFile
 from termcolor import colored
 import kdl
 from typing import List, Optional
-
+from firefox.user_js import get_user_js_symlinks, grant_flatpaked_firefox_access_to_user_js
 
 def install():
     update_submodules()
@@ -39,7 +39,11 @@ def install():
                 print(colored(f"Unknown node type: {node.name}", color="red"))
                 exit(1)
 
+    for user_js_src, user_js_link in get_user_js_symlinks():
+        symlink_file(str(user_js_src), str(user_js_link), relative=False)
+
     patch_xdg_data_dir()
+    grant_flatpaked_firefox_access_to_user_js()
 
 
 def update_submodules():
@@ -50,26 +54,31 @@ def symlink_files(files: list[str]) -> None:
     for file in files:
         src_path = path.join(path.dirname(path.realpath(__file__)), file)
         link_path = path.join(HOME, file)
-        if not path.exists(src_path):
-            print(f"{colored('error', color='red')}: source file '{pretty_path(src_path)}' does not exist")
-            exit(1)
-        makedirs(path.dirname(link_path))
-        try:
-            print(
-                f"Symlink '{pretty_path(src_path)}' -> '{pretty_path(link_path)}'",
-                end="",
-            )
-            update = path.islink(link_path)
-            if update:
-                unlink(link_path)
-            symlink(path.relpath(src_path, start=path.dirname(link_path)), link_path)
-            if update:
-                print(f" [{colored('ok, updated', color='green')}]")
-            else:
-                print(f" [{colored('ok, new', color='green')}]")
-        except FileExistsError:
-            print(f" [{colored('skipped', color='yellow')}]")
+        symlink_file(src_path, link_path)
 
+def symlink_file(src_path: str, link_path: str, relative:bool=True) -> None:
+    if not path.exists(src_path):
+        print(f"{colored('error', color='red')}: source file '{pretty_path(src_path)}' does not exist")
+        exit(1)
+    makedirs(path.dirname(link_path))
+    try:
+        print(
+            f"Symlink '{pretty_path(src_path)}' -> '{pretty_path(link_path)}'",
+            end="",
+        )
+        update = path.islink(link_path)
+        if update:
+            unlink(link_path)
+        if relative:
+            symlink(path.relpath(src_path, start=path.dirname(link_path)), link_path)
+        else:
+            symlink(src_path, link_path)
+        if update:
+            print(f" [{colored('ok, updated', color='green')}]")
+        else:
+            print(f" [{colored('ok, new', color='green')}]")
+    except FileExistsError:
+        print(f" [{colored('skipped', color='yellow')}]")
 
 def touch_files(files: list[str]) -> None:
     for file in files:

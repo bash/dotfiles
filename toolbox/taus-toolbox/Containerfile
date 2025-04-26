@@ -1,0 +1,14 @@
+FROM registry.fedoraproject.org/fedora-toolbox:42
+
+RUN dnf --assumeyes install \
+	uv python3-gobject \
+	fish nvim just sqlite3 podman-compose git-delta \
+	patch envsubst \
+	certutil \
+		&& dnf clean all
+
+RUN wget 'https://github.com/FiloSottile/mkcert/releases/download/v1.4.4/mkcert-v1.4.4-linux-amd64' -O /usr/local/bin/mkcert \
+	&& chmod +x /usr/local/bin/mkcert \
+	&& echo '6d31c65b03972c6dc4a14ab429f2928300518b26503f58723e532d1b0a3bbb52  /usr/local/bin/mkcert' | sha256sum -c
+
+COPY shims/* /usr/local/bin/

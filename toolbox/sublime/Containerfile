@@ -1,0 +1,6 @@
+FROM registry.fedoraproject.org/fedora-toolbox:42
+
+RUN rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
+RUN dnf config-manager addrepo --from-repofile=https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
+RUN dnf install --assumeyes sublime-text sublime-merge \
+	&& dnf clean all

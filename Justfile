@@ -26,3 +26,7 @@ brew-install:
 set-custom-folder-icons:
 	gio set ~/Source metadata::custom-icon-name 'folder-git'
 	gio set ~/Audiobooks metadata::custom-icon-name 'folder-books'
+
+# Re-builds the toolbox image and re-creates the container
+update-toolbox:
+    flatpak-spawn --host python3 ./toolbox/update.py

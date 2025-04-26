@@ -1,4 +1,5 @@
 [aliases]
+subl = "com.sublimetext.four"
 smerge = "com.sublimemerge.App"
 firefox = "org.mozilla.firefox"
 zed = "dev.zed.Zed"

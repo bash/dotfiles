@@ -1,0 +1,58 @@
+id: com.sublimetext.four
+runtime: org.freedesktop.Sdk
+runtime-version: '24.08'
+sdk: org.freedesktop.Sdk
+command: subl
+separate-locales: false
+finish-args:
+  # X11 + XShm access
+  - --share=ipc
+  - --socket=fallback-x11
+  # Wayland access
+  - --socket=wayland
+  # GPU acceleration if needed
+  - --device=dri
+  # Package control downloads files over the network
+  - --share=network
+  - --own-name=com.sublimetext
+modules:
+  - name: sublime_text
+    buildsystem: simple
+    build-commands:
+      - mkdir -p /app/bin
+      - install apply_extra /app/bin
+      - install subl /app/bin
+      - install -Dm644 ${FLATPAK_ID}.desktop /app/share/applications/${FLATPAK_ID}.desktop
+    sources:
+      - type: script
+        dest-filename: apply_extra
+        commands:
+          - FLATPAK_ID=com.sublimetext.four
+          # Extract upstream package
+          - mkdir -p deb-package export/share
+          - ar p sublime.deb data.tar.xz | tar -xJf - -C deb-package
+          # Install icons
+          - mv deb-package/usr/share/icons export/share/
+          - rename sublime-text ${FLATPAK_ID} export/share/icons/hicolor/*/apps/*
+          # Install the app
+          - mv deb-package/opt/sublime_text ./
+          # Cleanup
+          - rm -rf deb-package sublime.deb
+      - type: script
+        dest_filename: subl
+        commands:
+          - exec /app/extra/sublime_text/sublime_text --fwdargv0 "$0" "$@"
+      - type: extra-data
+        filename: sublime.deb
+        url: 'https://download.sublimetext.com/files/sublime-text_build-4192_amd64.deb'
+        sha256: c13284ffdf52054abad9fa48a35b75ac140f19293275738a1c11a736a1197951
+        size: 15758404
+        only-arches: [x86_64]
+      - type: extra-data
+        filename: sublime.deb
+        url: 'https://download.sublimetext.com/files/sublime-text_build-4192_arm64.deb'
+        sha256: b00282aace1c57840989ea97989f65b54f28604497a0a02b485875b87da854e5
+        size: 15200508
+        only-arches: [aarch64]
+      - type: file
+        path: com.sublimetext.four.desktop

@@ -1,0 +1,4 @@
+flatpak-builder-args := if path_exists('/run/.toolboxenv') == "true" { "--disable-rofiles-fuse" } else { "" }
+
+build *args:
+	flatpak-builder --force-clean --user --repo=repo --install {{flatpak-builder-args}} {{args}} builddir com.sublimetext.four.yml

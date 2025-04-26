@@ -5,6 +5,7 @@ symlink {
     ".config/Code/User/settings.json" os="Linux"
     ".config/Code/User/keybindings.json" os="Linux"
     ".config/color-scheme-sync.d" os="Linux"
+    ".config/containers/systemd/syncthing.container" os="Linux" hostname="taus-laptop"
     ".config/bat"
     ".config/beets"
     ".config/fish/conf.d"

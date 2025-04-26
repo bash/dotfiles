@@ -1,0 +1,20 @@
+[Unit]
+Description=Syncthing
+
+[Container]
+Image=docker.io/syncthing/syncthing:1.29
+Environment=STGUIADDRESS=
+Environment=PUID=0
+Environment=PGID=0
+Network=host
+SecurityLabelDisable=true
+Volume=%S/syncthing:/var/syncthing:rw
+Volume=%h/Music:/var/syncthing/Music:rw
+Volume=%h/Documents:/var/syncthing/Documents:rw
+Volume=%h/Pictures:/var/syncthing/Pictures:rw
+
+[Service]
+ExecStartPre=mkdir -p %S/syncthing
+
+[Install]
+WantedBy=default.target

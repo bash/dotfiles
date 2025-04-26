@@ -17,6 +17,7 @@ from termcolor import colored
 import kdl
 from typing import List, Optional
 from firefox.user_js import get_user_js_symlinks, grant_flatpaked_firefox_access_to_user_js
+from socket import gethostname
 
 def install():
     update_submodules()
@@ -170,6 +171,7 @@ def nodes_for_current_os(nodes: list[kdl.Node]) -> list[kdl.Node]:
         node
         for node in nodes
         if "os" not in node.props or node.props["os"] == platform.system()
+        if "hostname" not in node.props or gethostname() == node.props["hostname"]
     ]
 
 HOME = str(Path.home())

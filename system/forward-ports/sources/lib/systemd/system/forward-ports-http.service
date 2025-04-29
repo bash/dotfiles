@@ -1,9 +1,0 @@
-[Unit]
-Description=Forwards port :80 -> :1080
-Requires=forward-ports-http.socket
-After=forward-ports-http.socket
-
-[Service]
-Type=notify
-ExecStart=/usr/lib/systemd/systemd-socket-proxyd 127.0.0.1:1080
-PrivateTmp=yes

@@ -1,0 +1,11 @@
+[Unit]
+Description=Forwards port :80 -> :1080
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+PrivateTmp=yes
+ExecStart=socat TCP-LISTEN:80,fork TCP:127.0.0.1:1080
+
+[Install]
+WantedBy=default.target

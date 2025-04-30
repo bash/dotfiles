@@ -32,6 +32,10 @@ sudo authselect enable-feature with-pam-u2f
 sudo authselect apply-changes
 ```
 
+## 1Password
+1Password sometimes struggles opening with `--ozone-platform-hint=auto`.
+Enabling hardware acceleration seems to help ([source](https://www.1password.community/discussions/1password/i-cant-start-wayland-native-version-of-1password-/103974/replies/155047)).
+
 ## Fonts
 * [`-apple-system`](https://codeberg.org/tautropfli/apple-system-font)
 

@@ -5,4 +5,5 @@ extensions = [
     "foresight@pesader.dev",
     "light-style@gnome-shell-extensions.gcampax.github.com",
     "nightthemeswitcher@romainvigier.fr",
+    { uuid = "gsconnect@andyholmes.github.io", install = false },
 ]

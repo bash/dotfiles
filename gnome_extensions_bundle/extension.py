@@ -18,3 +18,4 @@ class Extension:
 @dataclass(frozen=True, kw_only=True)
 class RequestedExtension:
     uuid: str
+    install: bool

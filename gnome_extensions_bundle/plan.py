@@ -17,7 +17,7 @@ class Plan:
 
 def plan(diff: Diff) -> Plan:
     return Plan(
-        install=diff.not_installed,
+        install=[ext for ext in diff.not_installed if ext.install],
         enable=diff.not_enabled,
         uninstall=[ext for ext in diff.extra if ext.type == ExtensionType.USER],
         disable=[

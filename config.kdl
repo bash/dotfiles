@@ -1,6 +1,7 @@
 symlink {
     ".config/1Password/ssh/agent.toml"
     ".config/alacritty"
+    ".config/autostart/1password.desktop" os="Linux"
     ".config/homebrew" os="Darwin"
     ".config/Code/User/settings.json" os="Linux"
     ".config/Code/User/keybindings.json" os="Linux"

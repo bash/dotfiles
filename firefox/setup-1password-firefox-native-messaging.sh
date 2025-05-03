@@ -1,4 +1,6 @@
 #!/bin/sh
+# Based on https://gist.github.com/FlyinPancake/f4ff2318de48ae8dae6226384af953f5
+
 # shellcheck disable=SC3040
 set -euxo pipefail
 

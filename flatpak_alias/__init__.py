@@ -43,6 +43,7 @@ def _install_aliases(aliases: dict[str, str], dir: Path):
         makedirs(dir, exist_ok=True)
     for alias, app_id in aliases.items():
         alias_path = dir / alias
+        print(f'Alias {alias} -> {app_id}')
         with open(alias_path, "x") as f:
             f.write(_shim(app_id, arch))
         check_call(["chmod", "+x", "--", alias_path])

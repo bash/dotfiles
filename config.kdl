@@ -39,6 +39,8 @@ symlink {
     ".local/bin/with-env"
     ".var/app/dev.zed.Zed/config/keymap.json" os="Linux"
     ".var/app/dev.zed.Zed/config/settings.json" os="Linux"
+    ".var/app/dev.zed.Zed/config/zed/keymap.json" os="Linux"
+    ".var/app/dev.zed.Zed/config/zed/settings.json" os="Linux"
     "Library/Application Support/Code/User/settings.json" os="Darwin"
     "Library/Application Support/Code/User/keybindings.json" os="Darwin"
     "Library/Application Support/Sublime Merge/Packages/User/Preferences.sublime-settings" os="Darwin"

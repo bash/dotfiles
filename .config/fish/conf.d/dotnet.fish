@@ -1,3 +1,7 @@
+if test -d "$HOME/.local/share/dotnet"
+    set -x DOTNET_ROOT "$HOME/.local/share/dotnet"
+end
+
 if type -q dotnet
     # Disable welcome message
     set -x DOTNET_NOLOGO 1

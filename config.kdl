@@ -31,6 +31,7 @@ symlink {
     ".config/zed/settings.json"
     ".editorconfig"
     ".local/bin/code" os="Linux"
+    ".local/bin/podman-volume-snapshot"
     ".local/bin/flacs2mp3s"
     ".local/bin/mkweblink"
     ".local/bin/reset-desktop-used-apps" os="Linux"

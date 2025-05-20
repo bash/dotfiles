@@ -1,0 +1,13 @@
+# Make electron apps use wayland
+1password.Exec.electron = true
+code.Exec.electron = true
+"io.itch.itch".Exec.electron = true
+"org.signal.Signal".Exec.electron = true
+
+# Hide terminal apps
+[nvim]
+MimeType.remove = true
+NoDisplay = "true"
+
+[fish]
+NoDisplay = "true"

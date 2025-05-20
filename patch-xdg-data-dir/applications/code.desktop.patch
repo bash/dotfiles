@@ -1,4 +1,0 @@
-5c5
-< Exec=/usr/share/code/code %F
----
-> Exec=/usr/share/code/code %F --ozone-platform-hint=auto

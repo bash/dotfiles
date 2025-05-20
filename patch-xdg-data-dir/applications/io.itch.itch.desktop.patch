@@ -1,4 +1,0 @@
-4c4
-< Exec=/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=itch-run --file-forwarding io.itch.itch @@u %U @@
----
-> Exec=/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=itch-run --file-forwarding io.itch.itch @@u %U @@ --ozone-platform-hint=auto

@@ -4,10 +4,30 @@ code.Exec.electron = true
 "io.itch.itch".Exec.electron = true
 "org.signal.Signal".Exec.electron = true
 
-# Hide terminal apps
+
+# Hide terminal editors / shells
 [nvim]
 MimeType.remove = true
+Categories.remove = true
 NoDisplay = "true"
+Hidden = "true"
+
+[Helix]
+MimeType.remove = true
+Categories.remove = true
+NoDisplay = "true"
+Hidden = "true"
 
 [fish]
 NoDisplay = "true"
+
+[kitty-open]
+MimeType.remove = true
+NoDisplay = "true"
+Hidden = "true"
+
+
+# I don't want to open files in Zed by default
+["dev.zed.Zed"]
+MimeType.remove = true
+Categories.remove = true

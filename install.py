@@ -16,8 +16,12 @@ from tempfile import NamedTemporaryFile
 from termcolor import colored
 import kdl
 from typing import List, Optional
-from firefox.user_js import get_user_js_symlinks, grant_flatpaked_firefox_access_to_user_js
+from firefox.user_js import (
+    get_user_js_symlinks,
+    grant_flatpaked_firefox_access_to_user_js,
+)
 from socket import gethostname
+
 
 def install():
     update_submodules()
@@ -43,7 +47,6 @@ def install():
     for user_js_src, user_js_link in get_user_js_symlinks():
         symlink_file(str(user_js_src), str(user_js_link), relative=False)
 
-    patch_xdg_data_dir()
     grant_flatpaked_firefox_access_to_user_js()
 
 
@@ -57,9 +60,12 @@ def symlink_files(files: list[str]) -> None:
         link_path = path.join(HOME, file)
         symlink_file(src_path, link_path)
 
-def symlink_file(src_path: str, link_path: str, relative:bool=True) -> None:
+
+def symlink_file(src_path: str, link_path: str, relative: bool = True) -> None:
     if not path.exists(src_path):
-        print(f"{colored('error', color='red')}: source file '{pretty_path(src_path)}' does not exist")
+        print(
+            f"{colored('error', color='red')}: source file '{pretty_path(src_path)}' does not exist"
+        )
         exit(1)
     makedirs(path.dirname(link_path))
     try:
@@ -81,6 +87,7 @@ def symlink_file(src_path: str, link_path: str, relative:bool=True) -> None:
     except FileExistsError:
         print(f" [{colored('skipped', color='yellow')}]")
 
+
 def touch_files(files: list[str]) -> None:
     for file in files:
         dest_path = path.join(HOME, file)
@@ -91,42 +98,6 @@ def touch_files(files: list[str]) -> None:
                 pass
 
 
-def patch_xdg_data_dir() -> None:
-    patch_dir = "patch-xdg-data-dir"
-    patch_files = glob(
-        "**/*.patch", root_dir=patch_dir, recursive=True, include_hidden=True
-    )
-    should_update_desktop_database = False
-    for f in patch_files:
-        file_name = f.removesuffix(".patch")
-        original = find_original_xdg_data_file(file_name)
-        patch = path.join(patch_dir, f)
-        patched = path.join(xdg_data_home(), file_name)
-        if original is not None:
-            should_update_desktop_database = True
-            print(f"Patching {pretty_path(original)} -> {pretty_path(patched)}")
-            # patch is not happy when trying to read from symlinks, so we copy the source file first
-            with NamedTemporaryFile(suffix=".patch") as original_tmp:
-                with open(original, "rb") as f:
-                    original_tmp.write(f.read())
-                    original_tmp.flush()
-                makedirs(path.dirname(patched))
-                check_call(
-                    [
-                        "patch",
-                        original_tmp.name,
-                        patch,
-                        "--output",
-                        patched,
-                        "--read-only=fail",
-                        "--reject-file=/dev/null",
-                        "--quiet",
-                    ]
-                )
-    if should_update_desktop_database:
-        check_call(['update-desktop-database', path.join(xdg_data_home(), "applications")])
-
-
 def find_original_xdg_data_file(relative_path: str) -> Optional[str]:
     match = next(
         (dir for dir in xdg_data_dirs() if path.exists(path.join(dir, relative_path))),
@@ -134,15 +105,6 @@ def find_original_xdg_data_file(relative_path: str) -> Optional[str]:
     )
     if match is not None:
         return path.join(match, relative_path)
-
-
-def xdg_data_dirs() -> List[str]:
-    data_dirs = os.environ.get("XDG_DATA_DIRS", default="/usr/local/share:/usr/share")
-    return [data_dir for data_dir in data_dirs.split(":")]
-
-
-def xdg_data_home() -> str:
-    return os.environ.get("XDG_DATA_HOME", default=path.join(HOME, ".local", "share"))
 
 
 def install_vscode_extensions(extensions: list[str]):
@@ -173,6 +135,7 @@ def nodes_for_current_os(nodes: list[kdl.Node]) -> list[kdl.Node]:
         if "os" not in node.props or node.props["os"] == platform.system()
         if "hostname" not in node.props or gethostname() == node.props["hostname"]
     ]
+
 
 HOME = str(Path.home())
 

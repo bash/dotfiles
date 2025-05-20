@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 set -euo pipefail
+uv tool install 'silktouch @ git+https://codeberg.org/tautropfli/silktouch'
 uv run --quiet install.py
-python3 -m flatpak_alias
-python3 -m patch_desktop_files
-python3 -m gnome_extensions_bundle
+silktouch
